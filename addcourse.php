@@ -1,3 +1,7 @@
+<?php
+    date_default_timezone_set('prc');
+    $data = date('Y-m-d H:i:s',time());
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -50,11 +54,11 @@
                         </tr>
                         <tr>
                             <td width="40%" align="right" valign="middle" colspan="5">创建时间:</td>
-                            <td align="left" valign="middle"><input name="Gmt_Create" type="text" id="Gmt_Create" ></td>
+                            <td align="left" valign="middle"><input name="Gmt_Create" type="text" id="Gmt_Create" value="<?php echo $data;?>" ></td>
                         </tr>
                         <tr>
                             <td width="40%" align="right" valign="middle" colspan="5">最后修改时间:</td>
-                            <td align="left" valign="middle"><input name="Gmt_Modified" type="text" id="Gmt_Modified"></td>
+                            <td align="left" valign="middle"><input name="Gmt_Modified" type="text" id="Gmt_Modified" value="<?php echo $data;?>" ></td>
                         </tr>
                         <tr>
                             <td colspan="6" align="center" valign="middle"><input type="submit" name="submit" value="提交"/></td>
