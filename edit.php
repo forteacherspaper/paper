@@ -1,3 +1,4 @@
+//<赵晶>
 <?php require_once 'connections/conn.php';?>
 <?php
 if(isset($_GET['Id']))
@@ -10,6 +11,10 @@ else{
     $Course=MySQLi_query($conn,$query_Course) or die(mysqli_error($conn));
     $row_Course=mysqli_fetch_assoc($Course) or header("Location:editcourse.php");
  ?>
+<?php
+    date_default_timezone_set('prc');
+    $data = date('Y-m-d H:i:s',time());
+?>
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -62,11 +67,11 @@ else{
 		</tr>
 		<tr>
                     <td align="right">创建时间</td>
-		<td><input name="Gmt_Create" type="text" id="Gmt_Create" value="<?php echo $row_Course['gmt_create'];?>" /></td>
+		<td><input name="Gmt_Create" type="text" id="Gmt_Create" value="<?php echo $data;?>"  /></td>
 		</tr>
                 <tr>
                     <td align="right">最后修改时间</td>
-		<td><input name="Gmt_Modified" type="text" id="Gmt_Modified" value="<?php echo $row_Course['gmt_modified'];?>" /></td>
+		<td><input name="Gmt_Modified" type="text" id="Gmt_Modified" value="<?php echo $data;?>"/></td>
 		</tr>
             </tr>
             <tr>
