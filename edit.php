@@ -1,4 +1,4 @@
-//<赵晶>
+
 <?php require_once 'connections/conn.php';?>
 <?php
 if(isset($_GET['Id']))
