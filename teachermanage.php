@@ -36,8 +36,9 @@ $row_teacher=mysqli_fetch_assoc($Teacher);
 		<tr><table><hr></table></tr>
 
 		<tr><td><table align="center"><tr>
-			<td width="80%"><a href="teacher_course.php"><h3>教师所授课程</h3></a></td>
-			<td width="80%"><a href="addteacher.php?ID=<?php echo $row_teacher['id'] ?>" title="add.php?ID=<?php echo $row_teacher['id'] ?>"><h3>添加教师信息</h3></a></td>
+			<td width="40%"><a href="teacher_course.php"><h3>教师所授课程</h3></a></td>
+			<td width="40%"><a href="addteacher.php?ID=<?php echo $row_teacher['id'] ?>" title="add.php?ID=<?php echo $row_teacher['id'] ?>"><h3>添加教师信息</h3></a></td>
+			<td width="40%"><a href="queryteacher.php"><h3>查询教师信息</h3></a></td>
 		</tr></table></td></tr>
 		
 		<tr>
@@ -63,10 +64,7 @@ $row_teacher=mysqli_fetch_assoc($Teacher);
 							<td><?php echo $row_teacher['gmt_create']; ?></td>
 							<td><?php echo $row_teacher['gmt_modified']; ?></td>
 							<input type="hidden" name="ID" id="ID" value="<?php echo $row_teacher['id'] ?>">
-							<td>
-								<a href="delete.php?ID=<?php echo $row_teacher['id'] ?>" title="delete.php?ID=<?php echo $row_teacher['id'] ?>">删除</a>
-								<a href="editteacher.php?ID=<?php echo $row_teacher['id'] ?>" title="editteacher.php?ID=<?php echo $row_teacher['id'] ?>">编辑</a>
-							</td>
+							
 							
 						</tr>
 					<?php }while ($row_teacher=mysqli_fetch_assoc($Teacher)) ;
