@@ -15,3 +15,5 @@ if(isset($_POST["ID"]))
 header("Location:teachermanage.php");
 ?>
 
+
+

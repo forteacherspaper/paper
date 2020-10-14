@@ -5,7 +5,6 @@
 	}
 	else{
 		header("Location:teachermanage.php");
-		# code...
 	}
 	$query_teacher="delete from teacher where id=".$id;
 	$resault=mysqli_query($conn,$query_teacher) or die(mysqli_error($conn));

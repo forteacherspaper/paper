@@ -1,4 +1,4 @@
-<?php require_once 'connections/conn.php';?>
+<?php require_once('connections/conn.php'); ?>
 <?php
 if(isset($_GET['ID']))
     $teacherid=$_GET['ID'];
@@ -17,7 +17,7 @@ else{
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
-<title></title>
+<title>编辑教师信息</title>
 </head>
 	<body bgcolor="#f4f4f4">		
         <table width="100%" border="0" align="center"> 
