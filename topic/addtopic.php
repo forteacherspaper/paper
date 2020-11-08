@@ -1,5 +1,10 @@
 <?php require_once('../connections/conn.php'); ?>
 <?php
+session_start();
+    if(isset($_SESSION["courseid"]))
+         $courseid=$_SESSION["courseid"];
+    else
+        header("location:../selectcourse.php");//判断是否选择课程
 date_default_timezone_set('prc');
 $data=date('Y-m-d H:i:s',time());
 mysqli_query($conn,"set names 'utf8'");
@@ -13,14 +18,6 @@ $row_Topic=mysqli_fetch_assoc($Topic) ;
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>添加题目</title>
-    <style type="text/css">
-        .a{
-                font-family: 黑体;
-                font-size: 25px;
-                background-color:aliceblue;
-                text-decoration: none;
-            }
-    </style>
     <meta http-equiv="content-type" content="text/html;charset=gb2312">
         <script language="javascript" src="ajax.js"></script>
         <script language="javascript">
@@ -42,16 +39,16 @@ $row_Topic=mysqli_fetch_assoc($Topic) ;
         </tr>
         
         <tr>
-			<td width="15%" height="20" align="left" valign="middle" class="a">
-				<a href="../index.php">首页</a>
+			<td width="15%" height="20" align="left" valign="middle">
+				<a href="index.php">首页</a>
 			</td>
-			<td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
-			<td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
-			<td width="15%" height="20%" align="left" valign="middle" class="a">
-				<a href="../teacher/teachermanage.php">教师管理</a>
+			<td width="15%" height="20%"><a href="">课程管理</a></td>
+			<td width="15%" height="20%"><a href="">课程章节管理</a></td>
+			<td width="15%" height="20%" align="left" valign="middle">
+				<a href="">教师管理</a>
 			</td>
-			<td width="15%" height="20%" align="left" valign="middle" class="a">
-				<a href="../paper/index.php">组卷系统</a>
+			<td width="15%" height="20%" align="left" valign="middle">
+				<a href="">组卷系统</a>
 			</td>
 		</tr>
         <tr><table><hr></table></tr>
@@ -69,7 +66,7 @@ $row_Topic=mysqli_fetch_assoc($Topic) ;
                                 <?php
                                 //$link=mysql_connect("localhost","root","");
                              //   mysql_select_db("paper1") or die("没有此数据库！");
-                                $sql="select id,chaptername from chapter where courseid=1";
+                                $sql="select id,chaptername from chapter where courseid=$courseid";
                                 mysqli_query($conn,"set names 'utf8'");
                                 $res=mysqli_query($conn,$sql);
                                 while($result=mysqli_fetch_assoc($res)){
@@ -86,9 +83,7 @@ $row_Topic=mysqli_fetch_assoc($Topic) ;
                         <tr>
                             <td width="40%" align="right" valign="middle">题干:</td>
                             <td align="left" valign="middle">
-                                <textarea rows="5" cols="70" id="question" name="question">
-                                    
-                                </textarea>
+                                <textarea rows="5" cols="70" id="question" name="question"></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -110,7 +105,7 @@ $row_Topic=mysqli_fetch_assoc($Topic) ;
                             <td align="left" valign="middle"><textarea rows="5" cols="70" id="answer" name="answer"></textarea></td></tr>
                         <!-- <tr>
                             <td width="40%" align="right" valign="middle">出题人:</td>
-                            <td align="left" valign="middle"><input name="username" type="text" id="username" size="20" value="<?php session_start(); echo $_SESSION['username'];?>" /></td>
+                            <td align="left" valign="middle"><input name="username" type="text" id="username" size="20" value="<?php //session_start(); echo $_SESSION['username'];?>" /></td>
                         </tr>-->
                         <tr>
                             <td colspan="2" align="center" valign="middle"><input type="submit" name="submit" value="提交"

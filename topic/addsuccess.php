@@ -1,7 +1,8 @@
 <?php require_once '../connections/conn.php';?>
 <?php
+session_start();
+$username=$_SESSION['username'];
     mysqli_query($conn,"set names 'utf8'");
-
     $Result1=false;  //假设插入不成功
     if(isset($_POST['question'])){
        // $sectionid=$_POST['sectionid'];
@@ -13,7 +14,8 @@
         //$bigClassName=trim($_POST['bigClassName']);
         $smallClassName=trim($_POST['smallClassName']);
          //$insertSQL="insert into question(sectionid,question, questiontypeid,answer,username,gmt_create,gmt_modified) values($sectionid,'$question','$questiontype','$answer','$username','$gmt_create','$gmt_modified')";
-        $insertSQL="insert into question(sectionid,question,questiontypeid,answer) values($smallClassName,'$question','$questiontype','$answer')";
+        $insertSQL="insert into question(sectionid,question,questiontypeid,answer,username) values($smallClassName,'$question','$questiontype','$answer','$username')";
+        echo($insertSQL);
         
         $Result1= mysqli_query($conn, $insertSQL) or die(mysqli_error($conn));
         //echo $insertSQL;
