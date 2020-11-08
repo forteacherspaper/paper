@@ -1,0 +1,12 @@
+<?php
+//////////////
+//对用户对身份进行验证，是否登陆用户？
+//
+//sunlupeng,20201105
+////////////////
+session_start();
+if(!isset($_SESSION['username']))
+{
+	header("location:../login.php");
+}
+?>
