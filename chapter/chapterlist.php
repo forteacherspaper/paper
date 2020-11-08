@@ -2,6 +2,7 @@
 <?php require_once('../connections/conn.php'); //连接数据库?>
 <?php require'../connections/isrealuser.php';//判断是否用户登陆？?>
 <?php
+    session_start();
     if(!isset($_SESSION["courseid"]))
         header("location:../selectcourse.php");//判断是否选择课程
     else

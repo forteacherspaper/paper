@@ -5,6 +5,7 @@
         header("location:../selectcourse.php");//判断是否选择课程
     else
         $courseid=$_SESSION["courseid"];*/
+        
     if(isset($_GET['chapterid']))
     {
         $chapterid=$_GET['chapterid'];

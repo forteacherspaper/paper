@@ -1,6 +1,7 @@
 ﻿<!--  deleteOr.php  删除章节 -->
 <?php require_once('../connections/conn.php'); ?>
 <?php 
+  	mysqli_query($conn,"set names 'utf8'");
 	if (is_string($_GET['id'])) {
 		$id=$_GET['id'];
 	}

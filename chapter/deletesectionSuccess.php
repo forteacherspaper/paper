@@ -1,5 +1,6 @@
 <?php require_once '../connections/conn.php';?>
 <?php
+	mysqli_query($conn,"set names 'utf8'");
 mysqli_query($conn,"set names 'utf8'");
 if(isset($_POST["sectionname"]))
 {

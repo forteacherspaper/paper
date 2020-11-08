@@ -1,22 +1,4 @@
 <?php require_once '../connections/conn.php';?>
-<?php 
- 
-if(isset($_POST['submit'])){
- 
-    $b1 = $_FILES['b1']['name'];
-    $tmp1 = $_FILES['b1']['tmp_name']; 
-    $b1l = $_POST['b1l'];
-    $b2 = $_FILES['b2']['name'];
-    $tmp2 = $_FILES['b2']['tmp_name'];
-    $b2l = $_POST['b2l'];
- 
-    move_uploaded_file($tmp1,"ads/$b1");
-    move_uploaded_file($tmp2,"ads/$b2");
- 
-    $insert_posts = "insert into ads (b1,b2) value ('$b1','$b2')";
-    $run_posts = mysql_query($insert_posts);
-}
-?>
 <?php
     $Result1=false;  //假设插入不成功
 /*     if(!isset($_SESSION["courseid"]))

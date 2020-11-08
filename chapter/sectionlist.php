@@ -1,6 +1,7 @@
 ﻿<!--  sectionlist.php  编辑章节 -->
 <?php require_once('../connections/conn.php'); ?>
 <?php
+    session_start();
 if(!isset($_SESSION["chapterid"]))
      header("location:../addchapter.php");//判断是否选择章节
 else

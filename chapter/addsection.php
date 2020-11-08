@@ -5,6 +5,7 @@
         header("location:../selectcourse.php");//判断是否选择课程
     else
         $courseid=$_SESSION["courseid"];*/
+        session_start();
     if(isset($_GET['chapterid']))
     {
         $chapterid=$_GET['chapterid'];
@@ -45,7 +46,6 @@
                 <tr><td colspan="6" align="center" valign="middle">
                     <input type="checkbox" name="lianxu" checked="checked" value="yes" action="insertsection.php">连续添加</td>
                 </tr>  
-
                 <tr><td colspan="6" align="center" valign="middle">
                     <input type="submit" name="submit" value="提交"/></td>
                 </tr>

@@ -1,6 +1,7 @@
 <!--  allchapter.php  显示所有章节 -->
 <?php require_once '../connections/conn.php';?>
 <?php
+session_start();
     if(!isset($_SESSION["courseid"]))
         header("location:../selectcourse.php");//判断是否选择课程
     else
@@ -19,7 +20,9 @@ $row_Chapter=mysqli_fetch_assoc($Chapter);
 </head>
 <body bgcolor="#f4f4f4">
 	<table  border="0" cellspacing="" cellpadding="" width="100%">
-            <tr align="center"><td colspan="3"align="left" ><a href="../index.php">返回网站首页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../course/courselist">返回课程</a></td></tr>
+            <tr align="center"><td colspan="3"align="left" >
+                <a href="../index.php">返回网站首页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="../course/courselist">返回课程</a></td></tr>
             <tr><td align="center" colspan="6" ><font color="#1B2AE0" size="7"  >章管理</font></td></tr> 
            
             <td align="center" valign="middle"><a href="allchapter.php"><font color="#1B2AE0" size="4"  >章目录</font></a></td>
