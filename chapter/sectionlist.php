@@ -1,6 +1,15 @@
 ﻿<!--  sectionlist.php  编辑章节 -->
 <?php require_once('../connections/conn.php'); ?>
 <?php
+if(!isset($_SESSION["chapterid"]))
+     header("location:../addchapter.php");//判断是否选择章节
+else
+    $chapterid=$_SESSION["chapterid"];
+date_default_timezone_set('prc');
+$data = date('Y-m-d H:i:s',time());
+date_default_timezone_set('prc');
+$data = date('Y-m-d H:i:s',time());
+
 mysqli_query($conn,'set names utf8');
 $query_section="select * from section";
 $section=mysqli_query($conn,$query_section) or die(mysqli_error($conn));

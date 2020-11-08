@@ -1,8 +1,12 @@
 <!--  allchapter.php  显示所有章节 -->
 <?php require_once '../connections/conn.php';?>
 <?php
+    if(!isset($_SESSION["courseid"]))
+        header("location:../selectcourse.php");//判断是否选择课程
+    else
+        $courseid=$_SESSION["courseid"];
 MySQLi_query($conn,"set names 'utf8'");
-$query_Chapter="select * from Chapter";
+$query_Chapter="select * from Chapter where courseid=$courseid";
 $Chapter=MySQLi_query($conn,$query_Chapter) or die(mysqli_error($conn));
 $row_Chapter=mysqli_fetch_assoc($Chapter);
 ?>

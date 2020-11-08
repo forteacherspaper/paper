@@ -1,11 +1,19 @@
 <!--  allsection.php  显示所有小节 -->
-<?
-//header("Content-Type:text/html;charset=utf-8");
-?>
 <?php require_once '../connections/conn.php';?>
 <?php
+   /*if(!isset($_SESSION["courseid"]))
+        header("location:../selectcourse.php");//判断是否选择课程
+    else
+        $courseid=$_SESSION["courseid"];*/
+    if(isset($_GET['chapterid']))
+    {
+        $chapterid=$_GET['chapterid'];
+    }else
+    {
+        header("location:chapterlist.php");//判断是否选择课程
+    }
 MySQLi_query($conn,"set names 'utf8'");
-$query_section="select * from section";
+$query_section="select * from section where chapterid=$chapterid";
 $section=MySQLi_query($conn,$query_section) or die(mysqli_error($conn));
 $row_section=mysqli_fetch_assoc($section);
 ?>
@@ -18,9 +26,9 @@ $row_section=mysqli_fetch_assoc($section);
 </head>
 <body bgcolor="#f4f4f4">
 	<table  border="0" cellspacing="" cellpadding="" width="100%">
-              <tr align="center"><td colspan="3"align="left" ><a href="../course/courselist.php">返回课程</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="allchapter.php">返回大章</a></td></tr>
+              <tr align="center"><td colspan="3"align="left" ><a href="../course/courselist.php">返回课程</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="chapterlist.php">返回大章</a></td></tr>
             <tr><td align="center" colspan="3" height="80"><font color="#1B2AE0" size="7"  >节管理</font></td></tr>    
-            <tr height="80"><td align="center" ><a href="allsection.php">所有小节</a></td>
+            <tr height="80"><td align="center" >所有小节</td>
 		<td align="center" ><a href="addsection.php">添加小节</a></td>
                 <td align="center" ><a href="sectionlist.php">编辑小节信息</a></td>
             </tr>
@@ -33,8 +41,10 @@ $row_section=mysqli_fetch_assoc($section);
                                 <td><?php echo $row_section['number'];?></td>
                                <td><?php echo $row_section['sectionname'];?></td>
                             </tr>
+
                         <?php }while ($row_section= mysqli_fetch_assoc($section));
                         ?>
+                        <tr><td align="right" colspan="3"><a href="addsection.php">继续添加</a></td></tr>
 		</table>
 	</body>
 </html>

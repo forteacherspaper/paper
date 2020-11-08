@@ -1,6 +1,11 @@
 ﻿<!--  addpaper.php  添加章节 -->
  <?php require'../connections/isrealuser.php';?>
+
 <?php
+     if(!isset($_SESSION["courseid"]))
+        header("location:../selectcourse.php");//判断是否选择课程
+    else
+        $courseid=$_SESSION["courseid"];
     date_default_timezone_set('prc');
     $data = date('Y-m-d H:i:s',time());
 ?>
@@ -24,12 +29,13 @@
                 <tr><td width="50%" align="right" valign="middle" colspan="3" >
                     <font size="5" color="darkolivegreen ">添加章</font><br></td>
                 </tr>
+                <tr><td align="right" valign="middle" colspan="3">章号:</td>
+                    <td align="left" valign="middle" colspan="3"><input name="number" type="text" id="number"></td>
+        </tr>
 		<tr><td align="right" valign="middle" colspan="3">章名称:</td>
                     <td align="left" valign="middle" colspan="3"><input name="chaptername" type="text" id="chaptername"></td>
 		</tr>
-		<tr><td align="right" valign="middle" colspan="3">章号:</td>
-                    <td align="left" valign="middle" colspan="3"><input name="number" type="text" id="number"></td>
-		</tr>
+		
                 <tr><td colspan="6" align="center" valign="middle">
                     <input type="submit" name="submit" value="提交"/></td>
                 </tr>
