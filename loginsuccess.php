@@ -4,7 +4,7 @@ session_start();
 // 处理用户登录信息
 $user=trim($_POST['username']);/*获取登录表单提交过来的数据*/
 $pwd=trim($_POST['password']);
-$sql = "select count(*) from `teacher` where `username` = '$user' and `password` = '$pwd'";
+$sql = "select * from `teacher` where `username` = '$user' and `password` = '$pwd'";
 $teacherinfo=mysqli_query($conn,$sql) or die(mysqli_error($conn));//查询数据
 //$row=mysqli_fetch_array($teacherinfo);
 //echo $row["0"];
