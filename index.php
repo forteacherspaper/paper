@@ -1,9 +1,5 @@
 <?php
     session_start();
-    if(isset($_GET['ID']))
-        $_SESSION['courseid']=$_GET['ID'];
-    else
-        header("location:selectcourse.php");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -97,11 +93,11 @@
         <div id="mune">
 				<ul>
 					<li><a href="index.php">网站首页</a></li>
-                                        <li><a href="teacher/teachermanage.php">教师管理</a></li>
+                    <li><a href="teacher/teachermanage.php">教师管理</a></li>
 					<li><a href="course/courselist.php">课程管理</a></li>
-					<li><a href="chapter/chapterlist.php">章节管理</a></li>
-					<li><a href="topic/topicmanage.php">题目管理</a></li>
-					<li><a href="paper/index.php">组卷系统</a></li>
+					<li><a href="chapter/allchapter.php">章节管理</a></li>
+					<li><a href="topicmanage.php">题目管理</a></li>
+					<li><a href="zujuan.php">组卷系统</a></li>
 				</ul>    
 		</div>    
 				
