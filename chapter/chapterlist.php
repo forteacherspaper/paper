@@ -1,11 +1,17 @@
 <!--  chapterlist.php  编辑章节列表 -->
-<?php require_once('../connections/conn.php'); //连接数据库?>
-<?php require'../connections/isrealuser.php';//判断是否用户登陆？?>
+<?php require_once('../connections/conn.php'); //连接数据库 
+?>
+<?php require'../connections/isrealuser.php';//判断是否用户登陆？ 
+?>
 <?php
-    if(!isset($_SESSION["courseid"]))
-        header("location:../selectcourse.php");//判断是否选择课程
+    if(isset($_SESSION["courseid"]))
+    {
+       $courseid=$_SESSION["courseid"];
+    }
     else
-        $courseid=$_SESSION["courseid"];
+    {
+       header("location:../selectcourse.php");//判断是否选择课程
+    }
 mysqli_query($conn,'set names utf8');
 $query_Chapter="select * from chapter where courseid=$courseid";
 $Chapter=mysqli_query($conn,$query_Chapter) or die(mysqli_error($conn));

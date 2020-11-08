@@ -12,9 +12,9 @@ $row=mysqli_num_rows($teacherinfo);
 //echo $row;
 //echo $row["0"];
 if($row>0){
+	$_SESSION['username']=$user;
     echo "<script>alert('成功！');</script>";
     header('location:selectcourse.php');
-    $_SESSION['username']=$user;
 }else{
     header('refresh:3; url=login.php');
     echo "用户名或密码错误或为空,系统将在3秒后跳转到登录界面,请重新填写登录信息!";

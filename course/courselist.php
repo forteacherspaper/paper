@@ -1,4 +1,5 @@
 <?php require_once('../connections/conn.php'); ?>
+<?php require_once('../connections/isrealuser.php');?>
 <?php
 mysqli_query($conn,'set names utf8');
 $query_course="select * from course";
@@ -84,8 +85,11 @@ $row_course=mysqli_fetch_assoc($course);//取出一行数据的关联数组（�
 <body bgcolor="white">
 	<table width="100%" border="0" align="center">
             <div id="head">
-			<p align="right"><font color="white"><a class="login" href="../login.php">【登录】</a>
-            <a class="reg"  target="_blank" href="">【注册】</a></font></p>
+			<p align="right"><font color="white">
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
             </div>
 <!--导航栏-->
         <div id="mune">

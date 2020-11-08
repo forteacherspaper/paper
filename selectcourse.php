@@ -92,6 +92,27 @@ $row_teacher=mysqli_fetch_assoc($teacher);
 	</style>
 </head>
 <body bgcolor="white">
+    <table width="100%" border="0" align="center">
+        <tr>
+            <td height="68" colspan="4" align="center">
+                <font face="隶书" size="+4" color="#cccc00">组卷系统-题目管理</font>
+            </td>
+        </tr>
+        
+        <tr>
+            <td width="15%" height="20" align="left" valign="middle" class="a">
+                <a href="index.php">首页</a>
+            </td>
+            <td width="15%" height="20%" class="a"><a href="course/courselist.php">课程管理</a></td>
+            <td width="15%" height="20%" class="a"><a href="chapter/chapterlist.php">课程章节管理</a></td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="teacher/teachermanage.php">教师管理</a>
+            </td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="paper/index.php">组卷系统</a>
+            </td>
+        </tr>
+        <tr></table>
 	<table width="100%" border="0" align="center">
            
 <!--导航栏-->
@@ -117,10 +138,8 @@ $row_teacher=mysqli_fetch_assoc($teacher);
 			<?php do { ?>
                             <tr valign="middle" align="center">
 				<td><?php echo $row_course['id']; ?></td>
-				<td><a href="paper/index.php?ID=<?php echo $row_course['id'] ?>" title="选择课程，开始组卷"><?php echo $row_course['coursename'] ; ?></a></td>
-				<td><?php echo $row_course['manager']; ?></td>
-				<input type="hidden" name="Id" id="Id" value="<?php echo $row_course['id'] ?>">
-                            </tr>
+				<td><a href="index.php?ID=<?php echo $row_course['id'] ?>" title="选择课程，开始组卷"><?php echo $row_course['coursename'] ; ?></a></td>
+				<td><?php echo $row_course['manager']; ?></td></tr>
 			<?php }while ($row_course=mysqli_fetch_assoc($course)) ;?>
 		    </table>
 		</td>
