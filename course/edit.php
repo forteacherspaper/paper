@@ -21,10 +21,30 @@ else{
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>编辑课程</title>
+        <style type="text/css">
+        .a{
+                font-family: 黑体;
+                font-size: 25px;
+                background-color:aliceblue;
+                text-decoration: none;
+            }
+    </style>
 </head>
 	<body bgcolor="#f4f4f4">
 	<table width="100%" border="0" align="center"/>
-        
+        <tr>
+            <td width="15%" height="20" align="left" valign="middle" class="a">
+                <a href="../index.php">首页</a>
+            </td>
+            <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
+            <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="../topic/topicmanage.php">题目管理</a>
+            </td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="../paper/index.php">组卷系统</a>
+            </td>
+        </tr>
              
             <tr>        
 		<td height="169" colspan="6" align="center">

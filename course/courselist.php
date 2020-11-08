@@ -80,6 +80,12 @@ $row_course=mysqli_fetch_assoc($course);//取出一行数据的关联数组（�
 		margin: 0px 0px;
 		font-size:30;
             }
+        .a{
+                font-family: 黑体;
+                font-size: 25px;
+                background-color:aliceblue;
+                text-decoration: none;
+            }
 	</style>
 </head>
 <body bgcolor="white">

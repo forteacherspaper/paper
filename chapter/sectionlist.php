@@ -21,10 +21,31 @@ $row_section=mysqli_fetch_assoc($section);//取出一行数据的关联数组（
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>编辑小节页面</title>
+    <style type="text/css">
+        .a{
+                font-family: 黑体;
+                font-size: 25px;
+                background-color:aliceblue;
+                text-decoration: none;
+            }
+    </style>
 </head>
 <body bgcolor="#f4f4f4">
 <table border="0"  width="100%">
-	<tr><td align="center" colspan="5" ><font color="#1B2AE0" size="7"  >小节管理</font></td></tr>              
+	<tr><td align="center" colspan="5" ><font color="#1B2AE0" size="7"  >小节管理</font></td></tr>      
+     <tr>
+            <td width="15%" height="20" align="left" valign="middle" class="a">
+                <a href="../index.php">首页</a>
+            </td>
+            <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
+            <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="../topic/topicmanage.php">题目管理</a>
+            </td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="../paper/index.php">组卷系统</a>
+            </td>
+        </tr>       
         <tr><table border="0"  width="100%">
             <tr><td align="center" colspan="5" ><font   size="5"  >编辑节页面</font></td><br></tr>  
             <tr align="center">  <td height="50" ><a href="allsection.php">所有小节</a></td>

@@ -12,10 +12,31 @@ $row_section=mysqli_fetch_assoc($section);//取出一行数据的关联数组（
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>删除章节</title>
+    <style type="text/css">
+        .a{
+                font-family: 黑体;
+                font-size: 25px;
+                background-color:aliceblue;
+                text-decoration: none;
+            }
+    </style>
 </head>
 <body bgcolor="#f4f4f4">
         <table border="0"  width="100%">
             <tr><td colspan="5" align="center"><h2>删除页面</h2></td> </tr>
+            <tr>
+            <td width="15%" height="20" align="left" valign="middle" class="a">
+                <a href="../index.php">首页</a>
+            </td>
+            <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
+            <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="../topic/topicmanage.php">题目管理</a>
+            </td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="../paper/index.php">组卷系统</a>
+            </td>
+        </tr>
                 <td  valign="middle"  align="center"><b>小节序列</b></td>
                 <td  valign="middle" align="center" ><b>小节名称</b></td>
                 <td  valign="middle"  align="center"><b>编辑删除</b></td>

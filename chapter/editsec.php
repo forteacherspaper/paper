@@ -20,10 +20,31 @@ if (isset($_GET['id'])) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>编辑章节</title>
+    <style type="text/css">
+        .a{
+                font-family: 黑体;
+                font-size: 25px;
+                background-color:aliceblue;
+                text-decoration: none;
+            }
+    </style>
 </head>
 <body bgcolor="#f4f4f4">
     <table border="0" cellspacing="" cellpadding="" width="100%">
-	<tr><td align="center" colspan="6" ><font color="#1B2AE0" size="7"  >小节管理</font></td></tr>              
+	<tr><td align="center" colspan="6" ><font color="#1B2AE0" size="7"  >小节管理</font></td></tr>           
+        <tr>
+            <td width="15%" height="20" align="left" valign="middle" class="a">
+                <a href="../index.php">首页</a>
+            </td>
+            <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
+            <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="../topic/topicmanage.php">题目管理</a>
+            </td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="../paper/index.php">组卷系统</a>
+            </td>
+        </tr>
         <td align="center" valign="middle"><a href="allsection.php">小章序列</a></td> 
         <td align="center" valign="middle"><a href="addsection.php">添加小节</a></td>
         <td align="center" valign="middle"><a href="sectionlist.php">编辑小节信息</a></td>

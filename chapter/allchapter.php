@@ -16,12 +16,32 @@ $row_Chapter=mysqli_fetch_assoc($Chapter);
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <title>所有章节</title>
+<style type="text/css">
+        .a{
+                font-family: 黑体;
+                font-size: 25px;
+                background-color:aliceblue;
+                text-decoration: none;
+            }
+    </style>
 </head>
 <body bgcolor="#f4f4f4">
 	<table  border="0" cellspacing="" cellpadding="" width="100%">
             <tr align="center"><td colspan="3"align="left" ><a href="../index.php">返回网站首页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../course/courselist">返回课程</a></td></tr>
             <tr><td align="center" colspan="6" ><font color="#1B2AE0" size="7"  >章管理</font></td></tr> 
-           
+            <tr>
+            <td width="15%" height="20" align="left" valign="middle" class="a">
+                <a href="../index.php">首页</a>
+            </td>
+            <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
+            <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="../topic/topicmanage.php">题目管理</a>
+            </td>
+            <td width="15%" height="20%" align="left" valign="middle" class="a">
+                <a href="../paper/index.php">组卷系统</a>
+            </td>
+        </tr>
             <td align="center" valign="middle"><a href="allchapter.php"><font color="#1B2AE0" size="4"  >章目录</font></a></td>
             <td align="center" valign="middle"><a href="addchapter.php"><font color="#1B2AE0" size="4"  >添加章</font></a></td>
             <td align="center" valign="middle"><a href="chapterlist.php"><font color="#1B2AE0" size="4"  >编辑章信息</font></a></td>

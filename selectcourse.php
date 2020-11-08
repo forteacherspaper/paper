@@ -105,6 +105,7 @@ $row_teacher=mysqli_fetch_assoc($teacher);
             </td>
             <td width="15%" height="20%" class="a"><a href="course/courselist.php">课程管理</a></td>
             <td width="15%" height="20%" class="a"><a href="chapter/chapterlist.php">课程章节管理</a></td>
+             <td width="15%" height="20%" class="a"><a href="../topic/topicmanage.php">题目管理</a></td>
             <td width="15%" height="20%" align="left" valign="middle" class="a">
                 <a href="teacher/teachermanage.php">教师管理</a>
             </td>
