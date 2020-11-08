@@ -13,6 +13,14 @@ $row_Topic=mysqli_fetch_assoc($Topic) ;
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>添加题目</title>
+    <style type="text/css">
+        .a{
+                font-family: 黑体;
+                font-size: 25px;
+                background-color:aliceblue;
+                text-decoration: none;
+            }
+    </style>
     <meta http-equiv="content-type" content="text/html;charset=gb2312">
         <script language="javascript" src="ajax.js"></script>
         <script language="javascript">
@@ -34,15 +42,15 @@ $row_Topic=mysqli_fetch_assoc($Topic) ;
         </tr>
         
         <tr>
-			<td width="15%" height="20" align="left" valign="middle">
+			<td width="15%" height="20" align="left" valign="middle" class="a">
 				<a href="../index.php">首页</a>
 			</td>
-			<td width="15%" height="20%"><a href="../course/courselist.php">课程管理</a></td>
-			<td width="15%" height="20%"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
-			<td width="15%" height="20%" align="left" valign="middle">
+			<td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
+			<td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
+			<td width="15%" height="20%" align="left" valign="middle" class="a">
 				<a href="../teacher/teachermanage.php">教师管理</a>
 			</td>
-			<td width="15%" height="20%" align="left" valign="middle">
+			<td width="15%" height="20%" align="left" valign="middle" class="a">
 				<a href="../paper/index.php">组卷系统</a>
 			</td>
 		</tr>

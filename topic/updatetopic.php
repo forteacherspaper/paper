@@ -24,48 +24,56 @@ else{
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>题目修改</title>
+		<style type="text/css">
+		.a{
+				font-family: 黑体;
+				font-size: 25px;
+				background-color:aliceblue;
+				text-decoration: none;
+			}
+	</style>
 	</head>
 	<body bgcolor="#f4f4f4">
 		<table width="100%" border="0" align="center">
 		     <tr>
-		          <td width="27%" height="68" rowspan="2">
+		          <td height="78" rowspan="2">
 		          </td>
-		          <td height="68" colspan="4">
+		          <td height="68" colspan="4" align="center">
 		       <font face="隶书" size="+4" color="#cccc00">组卷系统-题目管理</font>
 		          </td>
-		          <td width="10%" rowspan="2">&nbsp;</td>
+		          <td  rowspan="2">&nbsp;</td>
 		     </tr>
 		    <tr>
-			<td width="15%" height="20"  valign="middle"><a href="../index.php">首页</a></td>
-			<td width="15%" height="20%" valign="middle"><a href="../course/courselist.php">课程管理</a></td>
-			<td width="15%" height="20%" valign="middle"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
-			<td width="15%" height="20%" valign="middle"><a href="../teacher/teachermanage.php">教师管理</a></td>
-			<td width="15%" height="20%" valign="middle"><a href="../paper/index.php">组卷系统</a></td>
+			<td align="left" class="a"><a href="../index.php">首页</a></td>
+			<td align="left" class="a"><a href="../course/courselist.php">课程管理</a></td>
+			<td align="left" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
+			<td align="left" class="a"><a href="../teacher/teachermanage.php">教师管理</a></td>
+			<td align="left" class="a"><a href="../paper/index.php">组卷系统</a></td>
 		</tr>
 		     <tr>
-		          <td width="15%" height="20">&nbsp;</td>
+		          <td  height="20">&nbsp;</td>
 		          
 		          <td height="169" colspan="6" align="center">
 		          	<form id="form1" name="form1" method="post" action="updatesuccess.php">
 		          		<table width="100%" border="0" align="center">
 		          			<tr align="center">
-		          				<h1 align="center">修改题目</h1>
+		          				<h1>修改题目</h1>
 		          			</tr>
-		          			<tr valign="middle">
-		          				<td align="center">题目</td>
-		     	<td><input name="question" type="text" id="question" size="30" value="<?php echo $row_Topic['question'];?>" title="<?php echo $id;?>" /></td>
+		          			<tr >
+		          				<td align="center"></td>
+		     	<td width="800px">题目<input name="question" type="text" id="question" size="30" value="<?php echo $row_Topic['question'];?>" title="<?php echo $id;?>" /></td>
 		     </tr>
 		     
 		      <tr>
-		     	<td align="center">答案</td>
-		     	<td><input name="answer" type="text" id="answer" size="20" value="<?php echo $row_Topic['answer'];?>" /></td>
+		     	<td></td>
+		     	<td width="800px">答案<input name="answer" type="text" id="answer" size="20" value="<?php echo $row_Topic['answer'];?>" /></td>
 		     </tr>
 		    <!--<tr>
 		     	<td align="center">出题人</td>
 		     	<td><input name="username" type="text" id="username" size="20" value="<?php echo $row_Topic['username']; ?>" /></td>
 		     </tr>-->
-		     	<td align="center">题型</td>
-		     	<td align="left" valign="middle">
+		     	<td></td>
+		     	<td width="800px" valign="middle">题型
 		     	<select name="questiontypeid" id="questiontypeid">
 		     		<option value="选择题" <?php if($row_Topic['questiontypeid']=="选择题") echo "selected='selected'"; ?>>选择题</option>
 		     		<option value="填空题" <?php if($row_Topic['questiontypeid']=="填空题") echo "selected='selected'"; ?>>填空题</option>
@@ -79,7 +87,7 @@ else{
 		     	</td>
 		     </tr>
 		     <tr>
-		     	<td colspan="2">
+		     	<td colspan="2" align="center">
 		     		<input type="hidden" name="id" id="id" value="<?php echo $row_Topic['id'];?>">
 		     		<input type="submit" name="submit" value="提交" url="topicmanage.php"/>
 		     	</td>

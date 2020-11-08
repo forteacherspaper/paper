@@ -20,6 +20,14 @@ $row_topic=mysqli_fetch_assoc($Topic);
 <head>
 	<meta charset="utf-8">
 	<title>组卷系统-全部题目列表</title>
+	<style type="text/css">
+		.a{
+				font-family: 黑体;
+				font-size: 25px;
+				background-color:aliceblue;
+				text-decoration: none;
+			}
+	</style>
 </head>
 <body bgcolor="#f4f4f4">
 	<table width="100%" border="0" align="center">
@@ -30,15 +38,15 @@ $row_topic=mysqli_fetch_assoc($Topic);
 		</tr>
 		
 		<tr>
-			<td width="15%" height="20" align="left" valign="middle">
+			<td width="15%" height="20" align="left" valign="middle" class="a">
 				<a href="../index.php">首页</a>
 			</td>
-			<td width="15%" height="20%"><a href="../course/courselist.php">课程管理</a></td>
-			<td width="15%" height="20%"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
-			<td width="15%" height="20%" align="left" valign="middle">
+			<td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
+			<td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
+			<td width="15%" height="20%" align="left" valign="middle" class="a">
 				<a href="../teacher/teachermanage.php">教师管理</a>
 			</td>
-			<td width="15%" height="20%" align="left" valign="middle">
+			<td width="15%" height="20%" align="left" valign="middle" class="a">
 				<a href="../paper/index.php">组卷系统</a>
 			</td>
 		</tr>
@@ -65,11 +73,11 @@ $row_topic=mysqli_fetch_assoc($Topic);
 
 					</tr>
 					<?php do { ?>
-						<tr valign="middle" align="center">
+						<tr valign="middle" align="center" >
 							<td><?php echo $row_topic['sectionid']; ?></td>
-							<td><?php echo $row_topic['question'] ; ?></td>
+							<td width="80px"><?php echo $row_topic['question'] ; ?></td>
 							<td><?php echo $row_topic['questiontypeid']; ?></td>
-							<td><?php echo $row_topic['answer']; ?></td>
+							<td width="150px"><?php echo $row_topic['answer']; ?></td>
 							<td><?php echo $row_topic['username'] ; ?></td>
 							 <td align="center"><a href="updatetopic.php?id=<?php echo $row_topic['id']; ?>">编辑</a></td>
 							<input type="hidden" name="sectionid" id="sectionid" value="<?php echo $row_topic['sectionid'] ?>">
