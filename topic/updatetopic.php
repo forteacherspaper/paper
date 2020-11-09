@@ -38,9 +38,9 @@ else{
 		     <tr>
 		          <td height="78" rowspan="2">
 		          </td>
-		          <td height="68" colspan="4" align="center">
+		         <p align="center"> <td height="68" colspan="4" align="center">
 		       <font face="隶书" size="+4" color="#cccc00">组卷系统-题目管理</font>
-		          </td>
+		          </td></p>
 		          <td  rowspan="2">&nbsp;</td>
 		     </tr>
 		    <tr>
@@ -95,5 +95,11 @@ else{
 		     </tr>
 		</table>
 			</form>
+			<table width="100%" border="0">
+                    <hr>
+                    <tr>
+                        <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
+                    </tr>
+                </table> 
 	</body>
 </html>

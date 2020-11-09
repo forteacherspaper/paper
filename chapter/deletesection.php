@@ -23,6 +23,9 @@ $row_section=mysqli_fetch_assoc($section);//取出一行数据的关联数组（
 </head>
 <body bgcolor="#f4f4f4">
         <table border="0"  width="100%">
+            <tr height="100">
+           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-章节管理</font></td></p></tr> 
+            <br><br>
             <tr><td colspan="5" align="center"><h2>删除页面</h2></td> </tr>
             <tr>
             <td width="15%" height="20" align="left" valign="middle" class="a">
@@ -55,5 +58,11 @@ $row_section=mysqli_fetch_assoc($section);//取出一行数据的关联数组（
                     </td>
                 </tr>
 		</table>
+        <table width="100%" border="0">
+                    <hr>
+                    <tr>
+                        <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
+                    </tr>
+                </table> 
 	</body>
 </html>

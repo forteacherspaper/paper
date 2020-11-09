@@ -22,6 +22,8 @@ $row_course=mysqli_fetch_assoc($course);//取出一行数据的关联数组（�
 </head>
 <body bgcolor="#f4f4f4">
 	<table width="100%" border="0" align="center">
+		<tr height="100">
+           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-课程管理</font></td></p></tr> 
             <tr>
                 <td hight="68" colspan="6" align="center">
                     <font face="隶书" size="+4" color="darkcyan">课程管理</font>

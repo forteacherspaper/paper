@@ -20,6 +20,9 @@
 </head>
 <body bgcolor="#f4f4f4">
     <table width="100%" border="0" align="center">
+        <tr height="100">
+           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-课程管理</font></td></p></tr> 
+
         <tr>
             <td width="15%" height="20" align="left" valign="middle" class="a">
                 <a href="../index.php">首页</a>

@@ -29,11 +29,11 @@
 	 
     <table width="100%" border="0" align="center">
         <tr>
-            <td height="68" colspan="4" align="center">
-                <font face="隶书" size="+5" color="#cccc00">组卷系统-题目管理</font>
-            </td>
+            <p align="center"><td height="68" colspan="4" align="center">
+                <font face="隶书" size="+5" color="#cccc00">组卷系统-章节管理</font>
+            </td></p>
         </tr>
-        <tr><td align="center" colspan="6" ><font color="#1B2AE0" size="6"  >章管理</font></td></tr> 
+       <!-- <tr><td align="center" colspan="6" ><font color="#1B2AE0" size="6"  >章管理</font></td></tr> -->
         <tr>
             <td width="15%" height="20" align="left" valign="middle" class="a">
                 <a href="../index.php">首页</a>
@@ -48,10 +48,10 @@
                 <a href="../paper/index.php">组卷系统</a>
             </td>
         </tr>
-        </table> <br><br>        
-            <tr><td align="center"><a href="allchapter.php"><font color="#1B2AE0" size="4"  >章目录</font></a></td>
-            <td align="center"><a href="addchapter.php"><font color="#1B2AE0" size="4"  >添加章</font></a></td>
-            <td align="center" ><a href="chapterlist.php"><font color="#1B2AE0" size="4"  >编辑章信息</font></a></td>
+        </table> <br><br>  <br><br>      
+            <tr align="center"><td align="left"><a href="allchapter.php"><font color="#1B2AE0" size="4"  >章目录</font></a></td><br>
+            <td align="center"><a href="addchapter.php"><font color="#1B2AE0" size="4"  >添加章</font></a></td><br>
+            <td align="right" ><a href="chapterlist.php"><font color="#1B2AE0" size="4"  >编辑章信息</font></a></td>
         </tr>
         <tr><td height="169" colspan="6" align="center">
                 <form id="form1" name="form1" method="post" action="Insertchapter.php">
@@ -74,6 +74,12 @@
                 </td>
           </tr>
         </table>
+        <table width="100%" border="0">
+                    <hr>
+                    <tr>
+                        <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
+                    </tr>
+                </table>    
 </body>
 </html>
 

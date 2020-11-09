@@ -23,7 +23,8 @@ $row_Chapter=mysqli_fetch_assoc($Chapter);//取出一行数据的关联数组（
 </head>
 <body bgcolor="#f4f4f4">
         <table border="0"  width="100%">
-            <tr><td align="center" colspan="6" ><font color="#1B2AE0" size="7"  >章管理</font></td></tr> 
+           <tr height="100">
+           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-章管理</font></td></p></tr> 
             <tr>
             <td width="15%" height="20" align="left" valign="middle" class="a">
                 <a href="../index.php">首页</a>
@@ -59,5 +60,11 @@ $row_Chapter=mysqli_fetch_assoc($Chapter);//取出一行数据的关联数组（
             <?php }while ($row_Chapter=mysqli_fetch_assoc($Chapter)) ;
              ?> 
 		</table>
+        <table width="100%" border="0">
+                    <hr>
+                    <tr>
+                        <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
+                    </tr>
+                </table> 
 	</body>
 </html>

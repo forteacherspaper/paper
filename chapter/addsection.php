@@ -32,7 +32,8 @@
 <body bgcolor="#f4f4f4">
     <table border="0" width="100%">
 	<tr height="100">
-            <td align="center" colspan="6" ><font color="#1B2AE0" size="7"  >小节管理</font></td></tr>     
+            <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-小节管理</font></td></tr> 
+
              <tr>
             <td width="15%" height="20%" align="left" valign="middle">
                 <a href="../index.php" class="a">首页</a>
@@ -76,6 +77,12 @@
                 </td>
           </tr>
         </table>
+         <table width="100%" border="0">
+                    <hr>
+                    <tr>
+                        <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
+                    </tr>
+                </table>    
 </body>
 </html>
 
