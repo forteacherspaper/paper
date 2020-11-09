@@ -17,9 +17,9 @@
 <body bgcolor="#f4f4f4">
     <table width="100%" border="0" align="center">
 	   <tr>
-            <td height="68" colspan="4" align="center">
+           <p align="center"> <td height="68" colspan="4" align="center">
                 <font face="隶书" size="+4" color="#cccc00">组卷系统-题目管理</font>
-            </td>
+            </td></p>
             
         </tr>
         

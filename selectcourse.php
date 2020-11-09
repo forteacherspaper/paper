@@ -89,14 +89,20 @@ $row_teacher=mysqli_fetch_assoc($teacher);
 		margin: 0px 0px;
 		font-size:30;
             }
+            .a{
+                font-family: 黑体;
+                font-size: 25px;
+                background-color:aliceblue;
+                text-decoration: none;
+            }
 	</style>
 </head>
 <body bgcolor="white">
     <table width="100%" border="0" align="center">
         <tr>
-            <td height="68" colspan="4" align="center">
-                <font face="隶书" size="+4" color="#cccc00">组卷系统-题目管理</font>
-            </td>
+            <td height="98" colspan="4" align="center">
+               <p align="center"> <font face="隶书" size="+6" color="#cccc00" >组卷系统-请选择课程</font>
+            </p></td>
         </tr>
         
         <tr>
@@ -105,7 +111,7 @@ $row_teacher=mysqli_fetch_assoc($teacher);
             </td>
             <td width="15%" height="20%" class="a"><a href="course/courselist.php">课程管理</a></td>
             <td width="15%" height="20%" class="a"><a href="chapter/chapterlist.php">课程章节管理</a></td>
-             <td width="15%" height="20%" class="a"><a href="../topic/topicmanage.php">题目管理</a></td>
+             <td width="15%" height="20%" class="a"><a href="topic/topicmanage.php">题目管理</a></td>
             <td width="15%" height="20%" align="left" valign="middle" class="a">
                 <a href="teacher/teachermanage.php">教师管理</a>
             </td>
@@ -125,7 +131,7 @@ $row_teacher=mysqli_fetch_assoc($teacher);
                 <td></td>
                 <td></td>
                 <td width="27%" height="20" align="center" valign="middle">
-                <a href="../course/addcourse.php">创建课程</a>
+                <a href="course/addcourse.php">创建课程</a>
                 </td>
             <tr>
 		<td height="169" colspan="5" align="center">
@@ -145,7 +151,7 @@ $row_teacher=mysqli_fetch_assoc($teacher);
 		    </table>
 		</td>
 	</tr>
-	<!--<tr>
+	<tr>
             <td colspan="6">
                 <table width="100%" border="0"><hr>
                     <div id="foot">
@@ -153,7 +159,7 @@ $row_teacher=mysqli_fetch_assoc($teacher);
                     </div>
 		</table>	
 			</td>
-		</tr>-->
+		</tr>
 	</table>
 </body>
 </html>

@@ -17,6 +17,8 @@
 </head>
 <body>
 		<table>
+			<tr height="100">
+           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-试卷管理</font></td></p></tr> 
 			<tr>
 			<td width="15%" height="20" align="left" valign="middle" class="a">
 				<a href="../index.php">首页</a>
@@ -40,6 +42,11 @@
 				<td><a href="">编辑</a></td><td><a href="">删除</a></td>
 			</tr>
 		</table>
-
+         <table width="100%" border="0">
+                    <hr>
+                    <tr>
+                        <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
+                    </tr>
+                </table> 
 </body>
 </html>

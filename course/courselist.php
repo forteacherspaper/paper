@@ -88,8 +88,10 @@ $row_course=mysqli_fetch_assoc($course);//取出一行数据的关联数组（�
             }
 	</style>
 </head>
-<body bgcolor="white">
+<body bgcolor="white"><tr height="100">
+           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-课程管理</font></td></p></tr> 
 	<table width="100%" border="0" align="center">
+        
             <div id="head">
 			<p align="right"><font color="white">
                 <?php

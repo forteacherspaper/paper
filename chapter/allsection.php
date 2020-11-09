@@ -34,6 +34,9 @@ $row_section=mysqli_fetch_assoc($section);
 </head>
 <body bgcolor="#f4f4f4">
 	<table  border="0" cellspacing="" cellpadding="" width="100%">
+        <tr height="100">
+            <p align="center"><td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-节管理</font></td></p></tr> 
+            <br>
               <tr align="center"><td colspan="3"align="left" ><a href="../course/courselist.php">返回课程</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="chapterlist.php">返回大章</a></td></tr>
             <tr><td align="center" colspan="3" height="80"><font color="#1B2AE0" size="7"  >节管理</font></td></tr>    
             <tr>
@@ -68,5 +71,11 @@ $row_section=mysqli_fetch_assoc($section);
                         <tr><td align="right" colspan="3"><a href="addsection.php">继续添加</a></td></tr>
 		</table>
 	</body>
+    <table width="100%" border="0">
+                    <hr>
+                    <tr>
+                        <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
+                    </tr>
+                </table> 
 </html>
 

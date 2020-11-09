@@ -86,6 +86,8 @@
 		</style>
 </head>
 <body>
+    <tr height="60">
+           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">欢迎来到组卷系统</font></td></tr> </p>
 		<div id="head">
 			<p align="right"><font color="black">
             <?php if(isset($_SESSION["username"])){ 
