@@ -23,7 +23,7 @@
 </head>
 <body>
   <div id="b">
-    <p align="center"><font face="隶书" size="+4" color="#cccc00">郑州师范学院2019大创项目-组卷系统</font></p>
+    <p align="center"><font face="隶书" size="+4" color="#000000">郑州师范学院2019大创项目-组卷系统</font></p>
       </div>
   <table align="center" >
     <tr align="center"><td width="80%" align="center">

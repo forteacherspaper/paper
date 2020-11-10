@@ -1,5 +1,6 @@
 <?php require_once('../connections/conn.php'); ?>
 <?php require_once('../connections/isrealuser.php');?>
+<?php require'../connections/course.php';?>
 <?php
 mysqli_query($conn,'set names utf8');
 $query_course="select * from course";
@@ -80,9 +81,9 @@ $row_course=mysqli_fetch_assoc($course);//取出一行数据的关联数组（�
 		margin: 0px 0px;
 		font-size:30;
             }
-        .a{
+       .a{
                 font-family: 黑体;
-                font-size: 25px;
+                font-size: 16px;
                 background-color:aliceblue;
                 text-decoration: none;
             }
@@ -93,17 +94,27 @@ $row_course=mysqli_fetch_assoc($course);//取出一行数据的关联数组（�
             a:link{
                  text-decoration: none;
             }
-	</style>
+            
+    </style>
 </head>
-<body bgcolor="white"><tr height="100">
-    <div id="head">
-            <p align="right"><font>
+<body bgcolor="#f4f4f4">
+    <table border="0" width="100%">
+     
+    <table width="100%" border="0" align="center">
+        
+        <tr>
+            <p align="center"><td colspan="5" align="center">
+                <font face="隶书" size="+3" color="#000000">组卷系统-课程管理</font></td><td align="right" width="50px" bgcolor=""><font>
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
-            </div>
-           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-课程管理</font></td></p></tr> 
+                <a class="login" href="../logout.php">【退出】</a><br/>
+                <?php
+                echo "当前课程：".$coursename;
+                ?>
+                </font>
+            </td></p>
+        </tr> 
 	<table width="100%" border="0" align="center">
         
           

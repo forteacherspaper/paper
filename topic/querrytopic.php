@@ -1,3 +1,4 @@
+<?php require'../connections/course.php';?>
 <?php require_once('../connections/conn.php');?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -26,16 +27,15 @@
         <div id="head">
             <p align="right"><font>
                 <?php
-                session_start();
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
+                <a class="login" href="../logout.php">【退出】</a></font><br/>
+                </p>
             </div>
-	   <tr>
-           <p align="center"> <td height="68" colspan="6" align="center">
-                <font face="隶书" size="+4" color="#cccc00">组卷系统-题目管理</font>
-            </td></p>
-            
+        <tr>
+            <p align="center"><td height="68" colspan="4" align="center">
+                <font face="隶书" size="+4" color="#000000">题目管理-搜索</font>
+            </td></p>            
         </tr>
         
         <tr>

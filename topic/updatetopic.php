@@ -1,4 +1,5 @@
 <?php require_once('../connections/conn.php'); ?>
+<?php require'../connections/course.php';?>
 <?php
 session_start();
 //$name=session_name();
@@ -25,39 +26,36 @@ else{
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>题目修改</title>
 		<style type="text/css">
-		.a{
-				font-family: 黑体;
-				font-size: 25px;
-				background-color:aliceblue;
-				text-decoration: none;
-				width: 13%;
-			}
-			body{
+	 .a{
+                font-family: 黑体;
+                font-size: 25px;
+                background-color:aliceblue;
+                text-decoration: none;
+            }
+            body{
                 background: aliceblue;
                 text-decoration: none;
             }
             a:link{
                  text-decoration: none;
             }
-	</style>
-	</head>
-	<body bgcolor="#f4f4f4">
-		<table width="100%" border="0" align="center">
-			<div id="head">
+    </style>
+</head>
+<body bgcolor="#f4f4f4">
+	<table width="100%" border="0" align="center">
+		<div id="head">
             <p align="right"><font>
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
+                <a class="login" href="../logout.php">【退出】</a></font><br/>
+                </p>
             </div>
-		     <tr>
-		          <td height="78" rowspan="6">
-		          </td>
-		         <p align="center"> <td height="58" colspan="6" align="center">
-		       <font face="隶书" size="+4" color="#cccc00">题目管理-修改题目</font>
-		          </td></p>
-		          <td  rowspan="6">&nbsp;</td>
-		     </tr>
+		<tr>
+			<p align="center"><td height="68" colspan="4" align="center">
+				<font face="隶书" size="+4" color="#000000">题目管理-修改题目</font>
+			</td></p>
+		</tr>
 		    <tr>
 			<td align="center" class="a"><a href="../index.php">首页</a></td>
 			<td align="center" class="a"><a href="../course/courselist.php">课程管理</a></td>

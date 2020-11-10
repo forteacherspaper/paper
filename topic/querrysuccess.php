@@ -1,4 +1,5 @@
 <?php require_once('../connections/conn.php');?>
+<?php require'../connections/course.php';?>
 <?php
     //error_reporting(E_All & ~E_DEPRECATED);
 	 $colname_TopicInfo="-1";
@@ -45,23 +46,27 @@
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
+                <a class="login" href="../logout.php">【退出】</a><br/>
+                <?php
+                echo "当前课程：".$coursename;
+                ?>
+                </font></p>
             </div>
 	   <tr>
-           <p align="center"> <td height="68" colspan="4" align="center">
-                <font face="隶书" size="+4" color="#cccc00">组卷系统-题目管理</font>
+           <p align="center"> <td height="68" colspan="6" align="center">
+                <font face="隶书" size="+4" color="#000000">组卷系统-题目管理</font>
             </td></p>
             
         </tr>
         
          <tr>
-            <td width="15%" height="20%" align="left" valign="middle" class="a">
+            <td width="15%" height="20%" align="center" class="a">
                 <a href="../index.php">首页</a>
             </td>
             <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
             <td width="15%" height="20%" class="a"><a href="../teacher/teachermanage.php">教师管理</a></td>
             <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td> <td width="15%" height="20%" class="a"><a href="../topic/topicmanage.php">题目管理</a></td>
-            <td width="20%" height="20%" align="left" valign="middle" class="a">
+            <td width="20%" height="20%"  class="a">
                 <a href="../paper/index.php">组卷系统</a>
             </td>
         </tr>

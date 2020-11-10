@@ -1,4 +1,11 @@
 <?php require_once('../connections/conn.php'); ?>
+<?php require'../connections/isrealuser.php';?>
+<?php
+    if($_SESSION['username']!="admin")
+    {
+       header("location:../login.php");
+    }
+?>
 <?php
 if(isset($_GET['ID']))
     $teacherid=$_GET['ID'];
@@ -41,11 +48,13 @@ else{
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
-            </div> 
+                <a class="login" href="../logout.php">【退出】</a></font><br/>
+              
+                </font></p>
+            </div>
         	<tr>
 	           <p align="center"> <td height="68" colspan="4" align="center">
-	                <font face="隶书" size="+4" color="#cccc00">组卷系统-教师管理</font>
+	                <font face="隶书" size="+4" color="#000000">组卷系统-教师管理</font>
 	            </td></p>
 	            
         	</tr>

@@ -1,6 +1,7 @@
 ﻿<!--  addpaper.php  添加章节 -->
  <?php require'../connections/isrealuser.php';?>
-
+<?php require'../connections/course.php';//判断是否用户登陆？ 
+?>
 <?php
      if(!isset($_SESSION["courseid"]))
         header("location:../selectcourse.php");//判断是否选择课程
@@ -18,7 +19,7 @@
 <style type="text/css">
         .a{
                 font-family: 黑体;
-                font-size: 25px;
+                font-size: 16px;
                 background-color:aliceblue;
                 text-decoration: none;
             }
@@ -29,44 +30,44 @@
             a:link{
                  text-decoration: none;
             }
+            
     </style>
 </head>
 <body bgcolor="#f4f4f4">
     <table border="0" width="100%">
 	 
     <table width="100%" border="0" align="center">
-        <div id="head">
-            <p align="right"><font>
+        
+        <tr>
+            <p align="center"><td colspan="5" align="center">
+                <font face="隶书" size="+3" color="#000000">组卷系统-章节管理</font></td><td align="right" width="50px" bgcolor=""><font>
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
-            </div>
-        <tr>
-            <p align="center"><td height="68" colspan="4" align="center">
-                <font face="隶书" size="+5" color="#cccc00">组卷系统-章节管理</font>
+                <a class="login" href="../logout.php">【退出】</a><br/>
+                <?php
+                echo "当前课程：".$coursename;
+                ?>
+                </font>
             </td></p>
         </tr>
-       <!-- <tr><td align="center" colspan="6" ><font color="#1B2AE0" size="6"  >章管理</font></td></tr> -->
+        <tr><td></td></tr>
         <tr>
-            <td width="15%" height="20" align="left" valign="middle" class="a">
+            <td width="15%" height="20" align="center" valign="middle" class="a">
                 <a href="../index.php">首页</a>
             </td>
             <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
             <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
              <td width="15%" height="20%" class="a"><a href="../topic/topicmanage.php">题目管理</a></td>
-            <td width="15%" height="20%" align="left" valign="middle" class="a">
+            <td width="15%" height="20%"  class="a">
                 <a href="../teacher/teachermanage.php">教师管理</a>
             </td>
-            <td width="15%" height="20%" align="left" valign="middle" class="a">
+            <td width="15%" height="20%"  class="a">
                 <a href="../paper/index.php">组卷系统</a>
             </td>
         </tr>
-        </table> <br><br>  <br><br>      
-            <tr align="center"><td align="left"><a href="allchapter.php"><font color="#1B2AE0" size="4"  >章目录</font></a></td><br>
-            <td align="center"><a href="addchapter.php"><font color="#1B2AE0" size="4"  >添加章</font></a></td><br>
-            <td align="right" ><a href="chapterlist.php"><font color="#1B2AE0" size="4"  >编辑章信息</font></a></td>
-        </tr>
+        </table>
+        <br/> <br/>  
         <tr><td height="169" colspan="6" align="center">
                 <form id="form1" name="form1" method="post" action="Insertchapter.php">
             <table border="0"  width="100%">

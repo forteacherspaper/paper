@@ -1,3 +1,10 @@
+<?php require'../connections/isrealuser.php';?>
+<?php
+    if($_SESSION['username']!="admin")
+    {
+       header("location:../login.php");
+    }
+?>
 <?php
 date_default_timezone_set('prc');
 $data=date('Y-m-d H:i:s',time());
@@ -31,11 +38,12 @@ $data=date('Y-m-d H:i:s',time());
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
+                <a class="login" href="../logout.php">【退出】</a></font><br/>
+              </p>
             </div>
 	    <tr>
            <p align="center"> <td height="68" colspan="4" align="center">
-                <font face="隶书" size="+4" color="#cccc00">组卷系统-教师管理</font>
+                <font face="隶书" size="+4" color="#000000">组卷系统-教师管理</font>
             </td></p>
             
         </tr>

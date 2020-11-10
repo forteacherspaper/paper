@@ -1,4 +1,5 @@
    <?php require'../connections/isrealuser.php';?>
+   <?php require'../connections/course.php';?>
    <?php
     date_default_timezone_set('prc');
     $data = date('Y-m-d H:i:s',time());
@@ -32,10 +33,14 @@
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
+                <a class="login" href="../logout.php">【退出】</a><br/>
+                <?php
+                echo "当前课程：".$coursename;
+                ?>
+                </font></p>
             </div>
         <tr height="100">
-           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-课程管理</font></td></p></tr> 
+           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#000000">组卷系统-课程管理</font></td></p></tr> 
 
         <tr>
             <td width="15%" height="20" align="left" valign="middle" class="a">

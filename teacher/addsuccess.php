@@ -1,4 +1,11 @@
 <?php require_once '../connections/conn.php';?>
+<?php require'../connections/isrealuser.php';?>
+<?php
+    if($_SESSION['username']!="admin")
+    {
+       header("location:../login.php");
+    }
+?>
 <?php
     mysqli_query($conn,"set names 'utf8'");
     $Result1=false;  //假设插入不成功

@@ -1,6 +1,8 @@
 ﻿<!--  editOr.php  编辑章节 -->
 <?php require_once '../connections/conn.php';?>
  <?php require'../connections/isrealuser.php';?>
+ <?php require'../connections/course.php';//判断是否用户登陆？ 
+?>
 <?php
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -22,9 +24,9 @@ if (isset($_GET['id'])) {
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>编辑章节</title>
     <style type="text/css">
-        .a{
+         .a{
                 font-family: 黑体;
-                font-size: 25px;
+                font-size: 16px;
                 background-color:aliceblue;
                 text-decoration: none;
             }
@@ -35,19 +37,27 @@ if (isset($_GET['id'])) {
             a:link{
                  text-decoration: none;
             }
+            
     </style>
 </head>
 <body bgcolor="#f4f4f4">
-    <table border="0" cellspacing="" cellpadding="" width="100%">
-        <div id="head">
-            <p align="right"><font>
+    <table border="0" width="100%">
+     
+    <table width="100%" border="0" align="center">
+        
+        <tr>
+            <p align="center"><td colspan="5" align="center">
+                <font face="隶书" size="+3" color="#000000">组卷系统-章节管理</font></td><td align="right" width="50px" bgcolor=""><font>
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
-            </div>
-	<tr height="100">
-           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-章节管理</font></td></p></tr>    <br><br>           <tr>
+                <a class="login" href="../logout.php">【退出】</a><br/>
+                <?php
+                echo "当前课程：".$coursename;
+                ?>
+                </font>
+            </td></p>
+        </tr>   <br><br>           <tr>
             <td width="15%" height="20" align="left" valign="middle" class="a">
                 <a href="../index.php">首页</a>
             </td>

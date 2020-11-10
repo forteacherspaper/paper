@@ -1,14 +1,3 @@
-<?php
-    session_start();
-    if(isset($_GET['ID']))
-    {
-        $_SESSION['courseid']=$_GET['ID'];
-    }
-    else
-    {
-        header("location:selectcourse.php");
-    }
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -94,7 +83,7 @@
 </head>
 <body>
     <tr height="60">
-           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">欢迎来到组卷系统</font></td></tr> </p>
+           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#000000">教师组卷系统</font></td></tr> </p>
 		<div id="head">
 			<p align="right"><font color="black">
             <?php if(isset($_SESSION["username"])){ 

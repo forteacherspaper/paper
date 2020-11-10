@@ -1,10 +1,9 @@
 <?php
-//
-//
 //创建试卷
 require '../connections/isrealuser.php';
 
 ?>
+<?php require'../connections/course.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +11,9 @@ require '../connections/isrealuser.php';
 	<style type="text/css">
         .a{
                 font-family: 黑体;
-                font-size: 25px;
+                font-size: 16px;
                 background-color:aliceblue;
                 text-decoration: none;
-                text-align: center;
             }
             body{
                 background: aliceblue;
@@ -24,22 +22,27 @@ require '../connections/isrealuser.php';
             a:link{
                  text-decoration: none;
             }
+            
     </style>
 </head>
-<body class="a">
-	<form name="form1" action="createsuccess.php" method="post">
-		<div id="head">
-            <p align="right"><font>
+<body bgcolor="#f4f4f4">
+    <table border="0" width="100%">
+     
+    <table width="100%" border="0" align="center">
+        
+        <tr>
+            <p align="center"><td colspan="5" align="center">
+                <font face="隶书" size="+3" color="#000000">欢迎进入创建试卷---请输入试卷名称</font></td><td align="right" width="50px" bgcolor=""><font>
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
-            </div>
-		<tr>
-			<p align="center"><td height="68" colspan="4" align="center">
-				<font face="隶书" size="+4" color="#cccc00">欢迎进入创建试卷—请填入试卷名称</font>
-			</td></p>
-		</tr>
+                <a class="login" href="../logout.php">【退出】</a><br/>
+                <?php
+                echo "当前课程：".$coursename;
+                ?>
+                </font>
+            </td></p>
+        </tr> 
 		<br><br>
 		<table><tr>
 			<td width="15%" height="20" align="center" class="a">

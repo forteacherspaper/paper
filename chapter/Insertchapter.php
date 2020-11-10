@@ -1,5 +1,6 @@
 <?php require_once '../connections/conn.php';?>
 <?php require'../connections/isrealuser.php';?>
+<?php require'../connections/course.php';?>
 <?php
      if(!isset($_SESSION["courseid"]))
         header("location:../selectcourse.php");//判断是否选择课程

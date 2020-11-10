@@ -1,16 +1,12 @@
 <?php require_once('../connections/conn.php'); ?>
+<?php require'../connections/isrealuser.php';?>
 <?php
-   /*  if(!isset($_SESSION["courseid"]))
-        header("location:../selectcourse.php");//判断是否选择课程
-    else
-        $courseid=$_SESSION["courseid"];*/
-    if(isset($_GET['username']))
+    if($_SESSION['username']!="admin")
     {
-        $username=$_GET['username'];
-    }else
-    {
-        header("location:../index.php");//判断是否选择课程
+       header("location:../login.php");
     }
+?>
+<?php
     date_default_timezone_set('prc');
     $data = date('Y-m-d H:i:s',time());?>
 <?php
@@ -48,11 +44,12 @@ $row_teacher=mysqli_fetch_assoc($Teacher);
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
+                <a class="login" href="../logout.php">【退出】</a></font><br/>
+                </p>
             </div>
 		<tr>
 			<p align="center"><td height="68" colspan="4" align="center">
-				<font face="隶书" size="+4" color="#cccc00">组卷系统-教师管理</font>
+				<font face="隶书" size="+4" color="#000000">组卷系统-教师管理</font>
 			</td></p>
 		</tr>
 		

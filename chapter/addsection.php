@@ -1,5 +1,7 @@
 ﻿<!--  addsection.php  添加节 -->
  <?php require'../connections/isrealuser.php';?>
+ <?php require'../connections/course.php';//判断是否用户登陆？ 
+?>
 <?php
    /*  if(!isset($_SESSION["courseid"]))
         header("location:../selectcourse.php");//判断是否选择课程
@@ -23,7 +25,7 @@
 <style type="text/css">
         .a{
                 font-family: 黑体;
-                font-size: 25px;
+                font-size: 16px;
                 background-color:aliceblue;
                 text-decoration: none;
             }
@@ -34,38 +36,39 @@
             a:link{
                  text-decoration: none;
             }
+            
     </style>
 </head>
 <body bgcolor="#f4f4f4">
     <table border="0" width="100%">
-        <div id="head">
-            <p align="right"><font>
+     
+    <table width="100%" border="0" align="center">
+        
+        <tr>
+            <p align="center"><td colspan="5" align="center">
+                <font face="隶书" size="+3" color="#000000">组卷系统-小节管理</font></td><td align="right" width="50px" bgcolor=""><font>
                 <?php
                 echo $_SESSION['username'];
                 ?>
-                <a class="login" href="../logout.php">【退出】</a></font></p>
-            </div>
-	<tr height="100">
-            <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-小节管理</font></td></tr> 
-
+                <a class="login" href="../logout.php">【退出】</a><br/>
+                <?php
+                echo "当前课程：".$coursename;
+                ?>
+                </font>
+            </td></p>
+        </tr>
              <tr>
-            <td width="15%" height="20%" align="left" valign="middle">
+            <td width="15%" height="20%" align="center" valign="middle">
                 <a href="../index.php" class="a">首页</a>
             </td>
             <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
             <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
             <td width="15%" height="20%" class="a"><a href="../topic/topicmanage.php">题目管理</a></td>
             <td width="15%" height="20%" class="a"><a href="../teacher/teachermanage.php">教师管理</a></td>
-            <td width="20%" height="20%" align="left" valign="middle" class="a">
+            <td width="20%" height="20%"  class="a">
                 <a href="../paper/index.php">组卷系统</a>
             </td>
         </tr> 
-        <tr>      
-            <td align="center" valign="middle"><a href="allsection.php">小节目录</a></td>
-             <td align="center" valign="middle"><a href="addsection.php">添加小节</a></td>
-            <td align="center" valign="middle"><a href="sectionlist.php">编辑小节信息</a></td>
-           
-        </tr>
         <tr height="50"><td height="169" colspan="6" align="center">
                 <form id="form1" name="form1" method="post" action="insertsection.php">
             <table border="0"  width="100%">

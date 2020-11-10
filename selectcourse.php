@@ -92,7 +92,7 @@ $row_teacher=mysqli_fetch_assoc($teacher);
     <table width="100%" border="0" align="center">
         <tr>
             <td height="98" colspan="6" align="center">
-               <p align="center"> <font face="隶书" size="+6" color="#cccc00" >组卷系统-请选择课程</font>
+               <p align="center"> <font face="隶书" size="+3" color="#000000" >组卷系统-请选择课程</font>
             </p></td>
         </tr>
          <div id="head">
@@ -142,7 +142,7 @@ $row_teacher=mysqli_fetch_assoc($teacher);
 			<?php do { ?>
                 <tr valign="middle" align="center">
 				<td><?php echo $row_course['id']; ?></td>
-				<td><a href="index.php?ID=<?php echo $row_course['id'] ?>" title="选择课程，开始组卷"><?php echo $row_course['coursename'] ; ?></a></td>
+				<td><a href="recordcourse.php?id=<?php echo $row_course['id'] ?>" title="选择课程，开始组卷"><?php echo $row_course['coursename'] ; ?></a></td>
 				<td><?php echo $row_course['manager']; ?></td></tr>
 			<?php }while ($row_course=mysqli_fetch_assoc($course)) ;?>
 		    </table>
