@@ -17,10 +17,24 @@ require '../connections/isrealuser.php';
                 text-decoration: none;
                 text-align: center;
             }
+            body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
     </style>
 </head>
 <body class="a">
 	<form name="form1" action="createsuccess.php" method="post">
+		<div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
 		<tr>
 			<p align="center"><td height="68" colspan="4" align="center">
 				<font face="隶书" size="+4" color="#cccc00">欢迎进入创建试卷—请填入试卷名称</font>
@@ -45,9 +59,10 @@ require '../connections/isrealuser.php';
 		<tr><td>试卷名称：<input type="text" name="papername"/></td>&nbsp;&nbsp;<td><input type="submit" name="submit" value="提交"/></td></tr>
 	</form>
 	<table width="100%" border="0">
-                    <hr>
+		<tr><td><br><br><br></td></tr>
+                   <tr><td><hr></td></tr>
                     <tr>
-                        <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
+                         <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
                     </tr>
                 </table> 
 </body>

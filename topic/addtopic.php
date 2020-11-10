@@ -25,6 +25,13 @@ $row_Topic=mysqli_fetch_assoc($Topic) ;
                 background-color:aliceblue;
                 text-decoration: none;
             }
+            body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
     </style>
     <meta http-equiv="content-type" content="text/html;charset=gb2312">
         <script language="javascript" src="ajax.js"></script>
@@ -39,6 +46,13 @@ $row_Topic=mysqli_fetch_assoc($Topic) ;
 </head>
 <body bgcolor="#f4f4f4">
     <table width="100%" border="0" align="center">
+        <div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
        <tr>
             <p align="center"><td height="68" colspan="4" align="center">
                 <font face="隶书" size="+4" color="#cccc00">组卷系统-题目管理</font>

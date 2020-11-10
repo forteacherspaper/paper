@@ -83,6 +83,13 @@
 				margin: 0px 0px;
 				font-size:30;
 			}
+            body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
 		</style>
 </head>
 <body>

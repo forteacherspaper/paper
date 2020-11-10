@@ -25,10 +25,24 @@ else{
                 background-color:aliceblue;
                 text-decoration: none;
             }
+            body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
     </style>
 </head>
 	<body bgcolor="#f4f4f4">		
-        <table width="100%" border="0" align="center"> 
+        <table width="100%" border="0" align="center">
+        <div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div> 
         	<tr>
 	           <p align="center"> <td height="68" colspan="4" align="center">
 	                <font face="隶书" size="+4" color="#cccc00">组卷系统-教师管理</font>

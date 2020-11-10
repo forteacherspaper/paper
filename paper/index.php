@@ -1,3 +1,4 @@
+	<?php require'../connections/isrealuser.php';?>
 	<!DOCTYPE html>
 	<html>
 	<head>
@@ -9,12 +10,26 @@
 				background-color:aliceblue;
 				text-decoration: none;
 			}
+			body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
 	</style>
 	</head>
 	<body>
 	<table width="100%" border="0" align="center">
+		<div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
 		<tr>
-			<p align="center"><td height="68" colspan="4" align="center">
+			<p align="center"><td height="48" colspan="6" align="center">
 				<font face="隶书" size="+4" color="#cccc00">欢迎进入组卷系统</font>
 			</td></p>
 		</tr>

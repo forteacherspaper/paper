@@ -30,46 +30,59 @@ $row_Chapter=mysqli_fetch_assoc($Chapter);//取出一行数据的关联数组（
                 background-color:aliceblue;
                 text-decoration: none;
             }
+            body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
     </style>
 </head>
 <body bgcolor="#f4f4f4">
 <table border="0"  width="100%">
-   
-                <tr height="70">
-          <p align="center">  <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-章管理</font></td></p></tr> 
-           <tr align="center"><td colspan="3"align="left" >  <a href="../index.php">返回网站首页</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="../course/courselist">返回课程</a></td></tr>
-	<br><br>
- 
+   <div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
+                <tr height="10">
+          <p align="center">  <td align="center" colspan="6" height="10%"><font face="隶书" size="+5" color="#cccc00">组卷系统-章管理</font></td></p></tr> 
     <tr>
-            <td width="15%" height="20" align="left" valign="middle" class="a">
+            <td width="15%" height="20" align="center" class="a">
                 <a href="../index.php">首页</a>
             </td>
             <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
             <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
-            <td width="15%" height="20%" align="left" valign="middle" class="a">
+            <td width="15%" height="20%" align="center" valign="middle" class="a">
                 <a href="../topic/topicmanage.php">题目管理</a>
             </td>
-            <td width="15%" height="20%" align="left" valign="middle" class="a">
+            <td width="15%" height="20%" align="center" valign="middle" class="a">
                 <a href="../paper/index.php">组卷系统</a>
             </td>
+            <tr><td><br></td></tr>
         </tr>
-        <tr height="70">
-            <td align="center" valign="middle"><a href="allchapter.php"><font color="#1B2AE0" size="4"  >章目录</font></a></td>
-            <td align="center" valign="middle"><a href="addchapter.php"><font color="#1B2AE0" size="4"  >添加章</font></a></td>
-            <td align="center" valign="middle"><a href="chapterlist.php"><font color="#1B2AE0" size="4"  >编辑章信息</font></a></td>
+        <tr align="center"><td colspan="6"align="center" height="10%">  <a href="../index.php">返回网站首页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="../course/courselist">返回课程</a></td></tr>
+        <tr height="70"> 
         </tr>
             <tr>
                 <td  valign="middle"  align="center"><b>章号</b></td>
                 <td  valign="middle" align="center" ><b>章名称</b></td>
-                <td  valign="middle"  align="center"><b>编辑</b></td>
+                <td  valign="middle"  align="center"><b>操作</b></td>
+                <td  valign="middle"  align="center"><b>添加章</b></td>
+                <td  valign="middle"  align="center"><b>编辑章</b></td>
+                <td  valign="middle"  align="center"><b>章目录</b></td>
+               
             </tr>
             <?php do { ?>
             <tr valign="middle" align="center">
                 <td><?php echo $row_Chapter['number']; ?></td>
                 <td><a href="allsection.php"><?php echo $row_Chapter['chaptername'] ; ?></a></td>
 		        <input type="hidden" name="id" id="id" value="<?php echo $row_Chapter['id'] ?>">
-		        <td>
+		        <td width="25%">
                     <a href="editOr.php?id=<?php echo $row_Chapter['id'] ?>" title="editOr.php?id=<?php echo $row_Chapter['id'] ?>">编辑&nbsp;&nbsp;&nbsp;
                     </a>
                     <a href="deleteOr.php?id=<?php echo $row_Chapter['id'] ?>" title="deleteOr.php?id=<?php echo $row_Chapter['id'] ?>" onclick="javascript:return confirm('您确定删除该章吗？');" >删除
@@ -77,7 +90,9 @@ $row_Chapter=mysqli_fetch_assoc($Chapter);//取出一行数据的关联数组（
                     </a>
                     <a href="addsection.php?chapterid=<?php echo $row_Chapter['id'] ?>" title="addsection.php?chapterid=<?php echo $row_Chapter['id'] ?>">添加节</a>&nbsp;&nbsp;&nbsp;
                     <a href="allsection.php?chapterid=<?php echo $row_Chapter['id'] ?>" title="allsection.php?chapterid=<?php echo $row_Chapter['id'] ?>">显示节序列</a></td>
-
+                    <td align="center" width="15%"><a href="addchapter.php"><font color="#1B2AE0" size="4"  >添加章</font></a></td> 
+                    <td align="center" width="15%"><a href="chapterlist.php"><font color="#1B2AE0" size="4"  >编辑章信息</font></a></td>
+                    <td align="center" width="15%"><a href="allchapter.php"><font color="#1B2AE0" size="4"  >章目录</font></a></td>
             </tr>
             <?php }while ($row_Chapter=mysqli_fetch_assoc($Chapter)) ;
             ?>

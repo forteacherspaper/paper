@@ -14,10 +14,24 @@
 				background-color:aliceblue;
 				text-decoration: none;
 			}
+			body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
 	</style>
 </head>
 <body>
 		<table>
+			<div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
 			<tr height="100">
            <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-试卷管理</font></td></p></tr> 
 			<tr>

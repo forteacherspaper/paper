@@ -1,10 +1,13 @@
 <?php require_once('../connections/conn.php'); ?>
+<?php require_once('../connections/isrealuser.php');?>
 <?php
-	session_start();
+	//session_start();
 	//var_dump($_SESSION);
 	//$id=session_id();
 	//$name=session_name();
 	$_SESSION['topicmanage']="题目管理";
+	//$_SESSION['coursename']=$_GET['coursename'];
+
 	//echo "<a href='updatetopic.php?{$topicmanage}={$topicmanage}>click</a>";
 
 ?>
@@ -27,12 +30,27 @@ $row_topic=mysqli_fetch_assoc($Topic);
 				background-color:aliceblue;
 				text-decoration: none;
 			}
+			body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
 	</style>
 </head>
 <body bgcolor="#f4f4f4">
 	<table width="100%" border="0" align="center">
+		<div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                echo $_SESSION['coursename'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
 		<tr>
-			<p align="center"><td height="68" colspan="4" align="center">
+			<p align="center"><td height="68" colspan="6" align="center">
 				<font face="隶书" size="+4" color="#cccc00">组卷系统-题目管理</font>
 			</td></p>
 		</tr>

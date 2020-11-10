@@ -15,6 +15,10 @@
        #5{
         height: 50px;
       }
+      body{
+       
+        background: #f0f8ff;
+      }
   </style>
 </head>
 <body>
@@ -26,26 +30,29 @@
     <form action="loginsuccess.php" method="post">
      <fieldset>
       <legend>用户登录</legend>
-      <ul>
+      <ul type="none">
       <li>
        <label>用户名:</label>
        <input type="text" name="username">
       </li>
+      <br>
       <li>
-       <label>密  码:</label>
+       <label>密 &nbsp; 码:  </label>
        <input type="password" name="password">
       </li>
       <li>
        <label> </label>
+       <br>
        <input type="submit" name="login" value="登录">
       </li>
       </ul>
      </fieldset>
   </form></td></tr></table>
 </div>
-<div id="5"><</div>
+<div id="5"></div>
+<br><br>
    <div id="foot">
-    <p align="center"><font color="white">版权所有&copy;郑州师范学院</font></p>
+    <p align="center"><font >版权所有&copy;郑州师范学院</font></p>
       </div>
      </form>
 </body>

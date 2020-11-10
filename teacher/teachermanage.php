@@ -1,5 +1,19 @@
 <?php require_once('../connections/conn.php'); ?>
 <?php
+   /*  if(!isset($_SESSION["courseid"]))
+        header("location:../selectcourse.php");//判断是否选择课程
+    else
+        $courseid=$_SESSION["courseid"];*/
+    if(isset($_GET['username']))
+    {
+        $username=$_GET['username'];
+    }else
+    {
+        header("location:../index.php");//判断是否选择课程
+    }
+    date_default_timezone_set('prc');
+    $data = date('Y-m-d H:i:s',time());?>
+<?php
 mysqli_query($conn,"set names 'utf8'");
 $query_teacher="select * from teacher";
 $Teacher=mysqli_query($conn,$query_teacher) or die(mysql_error($conn));
@@ -18,10 +32,24 @@ $row_teacher=mysqli_fetch_assoc($Teacher);
                 background-color:aliceblue;
                 text-decoration: none;
             }
+            body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
     </style>
 </head>
 <body bgcolor="#f4f4f4">
 	<table width="100%" border="0" align="center">
+		<div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
 		<tr>
 			<p align="center"><td height="68" colspan="4" align="center">
 				<font face="隶书" size="+4" color="#cccc00">组卷系统-教师管理</font>

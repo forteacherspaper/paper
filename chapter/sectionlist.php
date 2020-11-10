@@ -28,10 +28,24 @@ $row_section=mysqli_fetch_assoc($section);//取出一行数据的关联数组（
                 background-color:aliceblue;
                 text-decoration: none;
             }
+            body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
     </style>
 </head>
 <body bgcolor="#f4f4f4">
 <table border="0"  width="100%">
+    <div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
 	<tr height="100">
             <p align="center"><td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-章节管理</font></td></p></tr>   <br><br>   
      <tr>

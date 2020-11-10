@@ -13,11 +13,28 @@
 				background-color:aliceblue;
 				text-decoration: none;
 			}
+			body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
+            .b{
+            	font-size: 22px;
+            }
 	</style>
 </head>
 <body>
 		<table>
-			<tr height="100">
+			<div id="head" >
+            <p align="right" ><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
+			<tr height="70">
            <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#cccc00">组卷系统-试卷管理</font></td></p></tr> 
 			<tr>
 			<td width="15%" height="20" align="left" valign="middle" class="a">
@@ -33,7 +50,8 @@
 				<a href="../paper/index.php">组卷系统</a>
 			</td>
 		</tr>
-			<tr>
+		<tr><td><br><br><br></td></tr>
+			<tr class="b">
 				<td>序号</td><td>试卷名称</td><td>手工添加试题</td><td>自动添加试题</td><td>编辑</td><td>删除</td>
 			</tr>
 			<tr>

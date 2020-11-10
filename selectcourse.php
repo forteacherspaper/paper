@@ -67,22 +67,6 @@ $row_teacher=mysqli_fetch_assoc($teacher);
 		background-color: aliceblue;
 		height: 20px;
             }
-            #mune{
-		margin:0px 0;
-                height: 85px;
-		background-color:aliceblue;
-		text-decoration: none;
-            }
-            #mune ul{
-		list-style: none;
-            }
-            #mune ul li{
-		float: left;
-		margin: 20px 50px;
-		font-family: 黑体;
-		font-size: 22px;
-		color: white;
-            }
             #foot{
 		height:30px;
 		background-color:powderblue;
@@ -95,18 +79,31 @@ $row_teacher=mysqli_fetch_assoc($teacher);
                 background-color:aliceblue;
                 text-decoration: none;
             }
+            body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
 	</style>
 </head>
 <body bgcolor="white">
     <table width="100%" border="0" align="center">
         <tr>
-            <td height="98" colspan="4" align="center">
+            <td height="98" colspan="6" align="center">
                <p align="center"> <font face="隶书" size="+6" color="#cccc00" >组卷系统-请选择课程</font>
             </p></td>
         </tr>
-        
-        <tr>
-            <td width="15%" height="20" align="left" valign="middle" class="a">
+         <div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="logout.php">【退出】</a></font></p>
+            </div>
+        <tr align="center">
+            <td width="15%" height="20" align="center" valign="middle" class="a">
                 <a href="index.php">首页</a>
             </td>
             <td width="15%" height="20%" class="a"><a href="course/courselist.php">课程管理</a></td>
@@ -121,11 +118,11 @@ $row_teacher=mysqli_fetch_assoc($teacher);
         </tr>
         <tr></table>
 	<table width="100%" border="0" align="center">
-           
+        <tr><td><br><br></td></tr>
 <!--导航栏-->
-        <div id="mune">
-              <td align="center">欢迎 <?php echo $row_teacher['name'] ?> 老师登录组卷系统！</td>
-	</div>    
+        <tr> 
+                      <td align="center" colspan="6">欢迎 <?php echo $row_teacher['name'] ?> 老师登录组卷系统！</td>
+	     </tr>   
             <tr>
                 
                 <td></td>
@@ -143,7 +140,7 @@ $row_teacher=mysqli_fetch_assoc($teacher);
                             
 			</tr>
 			<?php do { ?>
-                            <tr valign="middle" align="center">
+                <tr valign="middle" align="center">
 				<td><?php echo $row_course['id']; ?></td>
 				<td><a href="index.php?ID=<?php echo $row_course['id'] ?>" title="选择课程，开始组卷"><?php echo $row_course['coursename'] ; ?></a></td>
 				<td><?php echo $row_course['manager']; ?></td></tr>

@@ -23,13 +23,25 @@ $row_Chapter=mysqli_fetch_assoc($Chapter);
                 background-color:aliceblue;
                 text-decoration: none;
             }
+            body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
     </style>
 </head>
 <body bgcolor="#f4f4f4">
 	<table  border="0" cellspacing="" cellpadding="" width="100%">
+        <div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
            <p align="center"> <tr><td align="center" colspan="6" >  <font face="隶书" size="+5" color="#cccc00">组卷系统-章管理</font></td></p></tr>
-            <tr align="center"><td colspan="3"align="left" ><a href="../index.php">返回网站首页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../course/courselist">返回课程</a></td></tr>
-             
             <tr>
             <td width="15%" height="20" align="left" valign="middle" class="a">
                 <a href="../index.php">首页</a>

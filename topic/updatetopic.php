@@ -30,26 +30,41 @@ else{
 				font-size: 25px;
 				background-color:aliceblue;
 				text-decoration: none;
+				width: 13%;
 			}
+			body{
+                background: aliceblue;
+                text-decoration: none;
+            }
+            a:link{
+                 text-decoration: none;
+            }
 	</style>
 	</head>
 	<body bgcolor="#f4f4f4">
 		<table width="100%" border="0" align="center">
+			<div id="head">
+            <p align="right"><font>
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <a class="login" href="../logout.php">【退出】</a></font></p>
+            </div>
 		     <tr>
-		          <td height="78" rowspan="2">
+		          <td height="78" rowspan="6">
 		          </td>
-		         <p align="center"> <td height="68" colspan="4" align="center">
-		       <font face="隶书" size="+4" color="#cccc00">组卷系统-题目管理</font>
+		         <p align="center"> <td height="58" colspan="6" align="center">
+		       <font face="隶书" size="+4" color="#cccc00">题目管理-修改题目</font>
 		          </td></p>
-		          <td  rowspan="2">&nbsp;</td>
+		          <td  rowspan="6">&nbsp;</td>
 		     </tr>
 		    <tr>
-			<td align="left" class="a"><a href="../index.php">首页</a></td>
-			<td align="left" class="a"><a href="../course/courselist.php">课程管理</a></td>
-			<td align="left" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
-			 <td width="15%" height="20%" class="a"><a href="../topic/topicmanage.php">题目管理</a></td>
-			<td align="left" class="a"><a href="../teacher/teachermanage.php">教师管理</a></td>
-			<td align="left" class="a"><a href="../paper/index.php">组卷系统</a></td>
+			<td align="center" class="a"><a href="../index.php">首页</a></td>
+			<td align="center" class="a"><a href="../course/courselist.php">课程管理</a></td>
+			<td align="center" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
+			 <td class="a" align="center"><a href="../topic/topicmanage.php">题目管理</a></td>
+			<td align="center" class="a"><a href="../teacher/teachermanage.php">教师管理</a></td>
+			<td align="center" class="a"><a href="../paper/index.php">组卷系统</a></td>
 		</tr>
 		     <tr>
 		          <td  height="20">&nbsp;</td>
@@ -57,9 +72,6 @@ else{
 		          <td height="169" colspan="6" align="center">
 		          	<form id="form1" name="form1" method="post" action="updatesuccess.php">
 		          		<table width="100%" border="0" align="center">
-		          			<tr align="center">
-		          				<h1>修改题目</h1>
-		          			</tr>
 		          			<tr >
 		          				<td align="center"></td>
 		     	<td width="800px">题目<input name="question" type="text" id="question" size="30" value="<?php echo $row_Topic['question'];?>" title="<?php echo $id;?>" /></td>
@@ -96,9 +108,9 @@ else{
 		</table>
 			</form>
 			<table width="100%" border="0">
-                    <hr>
-                    <tr>
-                        <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
+                    <hr width="100%">
+                    <tr >
+                        <td align="center" valign="middle" width="100%">Copyright@2020 组卷系统-题目管理</td>
                     </tr>
                 </table> 
 	</body>
