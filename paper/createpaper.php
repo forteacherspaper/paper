@@ -1,72 +1,58 @@
 <?php
+//
+//
 //创建试卷
 require '../connections/isrealuser.php';
-
 ?>
-<?php require'../connections/course.php';?>
-<!DOCTYPE html>
-<html>
+<?php require_once('../connections/conn.php');?>
+<?php
+//接收课程号，写入session
+//判断：如果没有课程号，让选择课程
+if(isset($_GET['ID']))
+	$_SESSION["courseid"]=$_GET['ID'];
+else if(!isset($_SESSION["courseid"]))
+   header("location:../selectcourse.php");
+/*if(isset($_POST['papername']))
+{
+    $papername=$_POST['papername'];     
+    MySQLi_query($conn, "set names 'utf8'");
+    
+ }*/   
+?>
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>创建试卷</title>
-	<style type="text/css">
-        .a{
-                font-family: 黑体;
-                font-size: 16px;
-                background-color:aliceblue;
-                text-decoration: none;
-            }
-            body{
-                background: aliceblue;
-                text-decoration: none;
-            }
-            a:link{
-                 text-decoration: none;
-            }
-            
-    </style>
-</head>
-<body bgcolor="#f4f4f4">
-    <table border="0" width="100%">
-     
-    <table width="100%" border="0" align="center">
-        
-        <tr>
-            <p align="center"><td colspan="5" align="center">
-                <font face="隶书" size="+3" color="#000000">欢迎进入创建试卷---请输入试卷名称</font></td><td align="right" width="50px" bgcolor=""><font>
-                <?php
-                echo $_SESSION['username'];
-                ?>
-                <a class="login" href="../logout.php">【退出】</a><br/>
-                <?php
-                echo "当前课程：".$coursename;
-                ?>
-                </font>
-            </td></p>
-        </tr> 
-		<br><br>
-		<table><tr>
-			<td width="15%" height="20" align="center" class="a">
-				<a href="../index.php">首页</a>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>教师组卷系统</title>
+</head> 
+<body bgcolor="">
+	<table width="100%" border="0" align="center">
+		<tr>
+                    <td height="68" colspan="4" align="center">
+                        <font face="隶书" size="+4" color="#cccc00">创建试卷</font>
+                    </td>
+		<tr>
+			<td height="169"  align="center">
+                <form name="form1" action="createsuccess.php" method="post">
+					试卷名称：<input type="text" name="papername"/><br/>
+					<p><input type="submit" name="submit" value="提交"/></p>
+				</form>
+            </td>
+        </tr>
+            <tr>
+			<td colspan="6"><table width="100%" border="0">
+			<hr>
+			<tr>
+				<td align="center" valign="middle">Copyright@2006 lanmo</td>
+			</tr>
+			<tr>
+				<td align="center" valign="middle">XXX Email:lanmo@myweb.com </td>
+                        </tr>
+			</table>
 			</td>
-			<td width="19%" height="20%" class="a" align="center"><a href="../course/allcourse.php">课程管理</a></td>
-			<td width="19%" height="20%" class="a" align="center"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
-            <td width="19%" height="20%" class="a" align="center"><a href="../topic/topicmanage.php">题目管理</a></td>
-			<td width="19%" height="20%" align="center" class="a">
-				<a href="../teacher/teachermanage.php">教师管理</a>
-			</td>
-			<td width="19%" height="20%" align="center" class="a">
-				<a href="../paper/index.php">组卷系统</a>
-			</td>
-		</tr></table>
-		<br /><br /><br />
-		<tr><td>试卷名称：<input type="text" name="papername"/></td>&nbsp;&nbsp;<td><input type="submit" name="submit" value="提交"/></td></tr>
-	</form>
-	<table width="100%" border="0">
-		<tr><td><br><br><br></td></tr>
-                   <tr><td><hr></td></tr>
-                    <tr>
-                         <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
-                    </tr>
-                </table> 
+		</tr>
+	</table>
 </body>
 </html>
