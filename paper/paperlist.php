@@ -26,12 +26,14 @@
 					<tr valign="middle">
 			            <td align="center"><b>序号</b></td>
 			            <td align="center"><b>试卷名称</b></td>
+						<td align="center"><b>查看试卷文本及答案</b></td>
 			            <td align="center"><b>添加&nbsp;&nbsp;编辑&nbsp;&nbsp;删除</b></td>                
 					</tr>
 					<?php do { ?>
 			            <tr valign="middle" align="center">
 			                <td><?php echo $i++; ?></td>
 							<td><a href="paperqueslist.php?paperid=<?php echo $row_paper['id']; ?>"><?php echo $row_paper['papername'] ; ?></a></td>
+							<td><a href="writepaper.php?paperid=<?php echo $row_paper['id']; ?>">查看试卷文本及答案</a></td>
 			                <td>
 			                	<a href="addques.php?paperid=<?php echo $row_paper['id'] ; ?>">添加题目</a>
 			                    <a href="editpapername.php?paperid=<?php echo $row_paper['id'] ; ?>">编辑</a>
