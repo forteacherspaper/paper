@@ -1,34 +1,35 @@
+<?php require_once('../connections/conn.php'); ?>
+<?php require '../connections/isrealuser.php'; ?>
+<?php require '../connections/course.php'; ?>
 <?php
-//
-//
-//创建试卷
-require '../connections/isrealuser.php';
-?>
-<?php require_once('../connections/conn.php');?>
-<?php require'../connections/course.php';?>
-<?php
-//接收课程号，写入session
-//判断：如果没有课程号，让选择课程
-if(isset($_GET['ID']))
-	$_SESSION["courseid"]=$_GET['ID'];
-else if(!isset($_SESSION["courseid"]))
-   header("location:../selectcourse.php");
-/*if(isset($_POST['papername']))
-{
-    $papername=$_POST['papername'];     
-    MySQLi_query($conn, "set names 'utf8'");
-    
- }*/   
-?>
+if(isset($_GET['paperid']))
+	{
+		$paperid=$_GET['paperid'];
+	}
+	else if(isset($_SESSION["paperid"])) {
+		$paperid=$_SESSION["paperid"];
+	}
+	else
+	{
+		header("location:paperlist.php");
+	}
+	$courseid=$_SESSION["courseid"];
+
+	mysqli_query($conn,'set names utf8');
+
+	$query_chapter="select id,number,chaptername from chapter where courseid=$courseid";
+    $chapter=MySQLi_query($conn,$query_chapter) or die(mysqli_error($conn));
+    //$row_chapter=mysqli_fetch_assoc($chapter);	
 	
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>创建试卷</title>
-	<style type="text/css">
-       .a{
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>试卷分析</title>
+<style type="text/css">
+		.a{
                 font-family: 黑体;
                 font-size: 16px;
                 background-color:aliceblue;
@@ -61,7 +62,7 @@ else if(!isset($_SESSION["courseid"]))
         <tr>
             <td></td>
             <p align="center"><td colspan="3" align="center">
-                <font face="隶书" size="+3" color="#000000">组卷系统-创建试卷</font>
+                <font face="隶书" size="+3" color="#000000">试卷覆盖率分析</font>
             </td></p>
             <td><div>
             <p align="right"><font>
@@ -90,23 +91,48 @@ else if(!isset($_SESSION["courseid"]))
                 <a href="index.php">组卷系统</a>
             </td>
         </tr></table>
-<table width="100%" border="0" align="center">
-       <tr><td><br><br></td></tr>
+	<table width="100%" border="0" align="center">
+		<tr>
+		    <td height="169"  align="center">
+			    <table width="100%" border="0">
+					<tr valign="middle">
+			            <td align="center"><b>章号</b></td>
+			            <td align="center"><b>章名称</b></td>
+						<td align="center"><b>题目数量</b></td>
+						                
+					</tr>
+					<?php while($row_chapter=mysqli_fetch_assoc($chapter)) { ?>
+					<tr valign="middle">
+						<td align="center"><?php echo $row_chapter['number'] ; ?></td>
+						<td align="center"><?php echo $row_chapter['chaptername'] ; ?></td>
+						<td align="center">
+							<table>
+								<tr>
+									<td><?php
+
+    $chapterid=$row_chapter['id'];
+    $query_timu="select count(id)  from paperquestion where paperid=$paperid and questionid in(select id from question where sectionid in(select id from section where chapterid=$chapterid))";
+    $timu=MySQLi_query($conn,$query_timu) or die(mysqli_error($conn));
+    $row_timu=mysqli_fetch_array($timu); 
+	echo $row_timu[0]; ?></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<?php } ?>		
+				</table>
+		    </td>
+	    </tr>
         <tr>
-            <td height="169"  align="center">
-                <form name="form1" action="createsuccess.php" method="post">
-                    试卷名称：<input type="text" name="papername"/><br/>
-                    <p><input type="submit" name="submit" value="提交"/></p>
-                </form>
-            </td>
-        </tr>
-    </table>
-	<table width="100%" border="0">
-		<tr><td><br><br><br></td></tr>
-                   <tr><td><hr></td></tr>
-                    <tr>
-                         <td align="center" valign="middle">Copyright@2020 组卷系统-题目管理</td>
-                    </tr>
-                </table>
+			<td colspan="6">
+				<table width="100%" border="0">
+					<hr>
+					<tr>
+						<td align="center" valign="middle">Copyright@郑州师范学院</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
 </body>
 </html>

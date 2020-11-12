@@ -18,80 +18,91 @@ $data=date('Y-m-d H:i:s',time());
      <style type="text/css">
         .a{
                 font-family: 黑体;
-                font-size: 25px;
+                font-size: 16px;
                 background-color:aliceblue;
                 text-decoration: none;
+                background-color: #ced1f2;
             }
             body{
                 background: aliceblue;
                 text-decoration: none;
             }
-            a:link{
+             a:link{
                  text-decoration: none;
+                 color:#000000;
+            
             }
+            a:visited{
+                color:#000000;
+             }
+             a:hover{
+                color:#000000;
+             }
+             a:active{
+                color:#000000;
+             }
+
     </style>
 </head>
 <body bgcolor="#f4f4f4">
-    <table width="100%" border="0" align="center">
-        <div id="head">
+    <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+        
+        <tr>
+            <td></td>
+            <p align="center"><td colspan="4" align="center">
+                <font face="隶书" size="+3" color="#000000">组卷系统-教师管理</font>
+            </td></p>
+            <td><div>
             <p align="right"><font>
                 <?php
                 echo $_SESSION['username'];
                 ?>
                 <a class="login" href="../logout.php">【退出】</a></font><br/>
-              </p>
-            </div>
-	    <tr>
-           <p align="center"> <td height="68" colspan="4" align="center">
-                <font face="隶书" size="+4" color="#000000">组卷系统-教师管理</font>
-            </td></p>
-            
+               
+                </p>
+            </div></td>
         </tr>
         
-        <tr>
-            <td width="15%" height="20%" align="left" valign="middle">
-                <a href="../index.php" class="a">首页</a>
-            </td>
-            <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
-            <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
-            <td width="15%" height="20%" class="a"><a href="../topic/topicmanage.php">题目管理</a></td>
-            <td width="15%" height="20%" class="a"><a href="../teacher/teachermanage.php">教师管理</a></td>
-            <td width="20%" height="20%" align="left" valign="middle" class="a">
-                <a href="../paper/index.php">组卷系统</a>
-            </td>
+       <tr>
+            <td width="15%" height="40px" align="center" class="a"><a href="../index.php">首页</a> </td>
+            <td width="15%" height="40px" class="a" align="center"><a href="teachermanage.php">教师管理</a></td>
+            <td width="15%" height="40px" class="a"align="center"><a href="../course/courselist.php">课程管理</a></td>
+            <td width="15%" height="40px" class="a" align="center"><a href="../chapter/chapterlist.php">章节管理</a></td>
+            <td width="15%" height="40px" class="a" align="center"><a href="../topic/topicmanage.php">题目管理</a></td>
+            <td width="15%" height="40px"  class="a" align="center"><a href="../paper/index.php">组卷系统</a></td>
         </tr>
         <tr><table><hr></table></tr>
         <tr>
             <td height="169" colspan="6" align="center">
                 <form id="forml" name="forml" method="post" action="addsuccess.php">
                     <table width="100%" border="0" align="center">
-                        <tr><td height="68" colspan="4" align="center"><h2>添加教师信息</h2></td></tr>
+                        <tr><td height="68" colspan="6" align="center"><h2>添加教师信息</h2></td></tr>
                         <tr>
-                            <td width="40%" align="right" valign="middle">姓名:</td>
-                            <td align="left" valign="middle"><input name="Name" type="text" id="Name"></td>
+                            <td width="40%" align="right" colspan="3" valign="middle">姓名:</td>
+                            <td align="left" valign="middle" colspan="3"><input name="Name" type="text" id="Name"></td>
                         </tr>
                         <tr>
-                            <td width="40%" align="right" valign="middle">用户名:</td>
-                            <td align="left" valign="middle"><input name="UserName" type="text" id="UserName"></td>
+                            <td width="40%" align="right" colspan="3" valign="middle">用户名:</td>
+                            <td align="left" valign="middle" colspan="3"><input name="UserName" type="text" id="UserName"></td>
                         </tr>
                         <tr>
-                            <td width="40%" align="right" valign="middle">密码:</td>
-                            <td align="left" valign="middle"><input name="Password" type="text" id="Password"></td>
+                            <td width="40%" align="right" colspan="3" valign="middle">密码:</td>
+                            <td align="left" valign="middle" colspan="3"><input name="Password" type="text" id="Password"></td>
                         </tr>
                         <tr>
-                            <td width="40%" align="right" valign="middle">邮箱:</td>
-                            <td align="left" valign="middle"><input name="Email" type="text" id="Email"></td>
+                            <td width="40%" align="right" colspan="3" valign="middle">邮箱:</td>
+                            <td align="left" valign="middle" colspan="3"><input name="Email" type="text" id="Email"></td>
                         </tr>
                         <tr>
-                            <td width="40%" align="right" valign="middle">创建时间:</td>
-                            <td align="left" valign="middle"><input name="Gmt_create" type="text" id="Gmt_create" value="<?php echo $data;?>"></td>
+                            <td width="40%" align="right"colspan="3" valign="middle">创建时间:</td>
+                            <td align="left" valign="middle" colspan="3"><input name="Gmt_create" type="text" id="Gmt_create" value="<?php echo $data;?>"></td>
                         </tr>
                         <tr>
-                            <td width="40%" align="right" valign="middle">最后修改时间:</td>
-                            <td align="left" valign="middle"><input name="Gmt_modified" type="text" id="Gmt_modified" value="<?php echo $data;?>"></td>
+                            <td width="40%" align="right" colspan="3" valign="middle">最后修改时间:</td>
+                            <td align="left" valign="middle" colspan="3"><input name="Gmt_modified" type="text" id="Gmt_modified" value="<?php echo $data;?>"></td>
                         </tr>
                         <tr>
-                            <td colspan="2" align="center" valign="middle"><input type="submit" name="submit" value="提交"/></td>
+                            <td colspan="6" align="center" valign="middle"><input type="submit" name="submit" value="提交"/></td>
                         </tr>
                     </table>
                 </form>

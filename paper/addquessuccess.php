@@ -1,5 +1,6 @@
 <?php require_once('../connections/conn.php');?>
 <?php require '../connections/isrealuser.php';?>
+<?php require '../connections/course.php';?>
 <?php
     mysqli_query($conn,"set names 'utf8'");
     if(isset($_GET['paperid']))

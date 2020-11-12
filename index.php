@@ -52,19 +52,23 @@
 			}
             #mune{
 				margin:0px 0;
-				height: 85px;
+				height: 55px;
 				background-color:aliceblue;
 				text-decoration: none;
+                text-align: center;
+                background-color:#ced1f2;
 			}
 			#mune ul{
 				list-style: none;
+
 			}
 			#mune ul li{
 				float: left;
-				margin: 20px 50px;
+				margin: 20px 80px;
 				font-family: 黑体;
 				font-size: 22px;
-				color: white;
+				color: black;
+                text-align: center;
 			}
 			#foot{
 				height:30px;
@@ -76,14 +80,32 @@
                 background: aliceblue;
                 text-decoration: none;
             }
-            a:link{
+             a:link{
                  text-decoration: none;
+                 color:#000000;
+            
+            }
+            a:visited{
+                color:#000000;
+             }
+             a:hover{
+                color:#000000;
+             }
+             a:active{
+                color:#000000;
+             }
+            .a{
+                font-family: 黑体;
+                font-size: 16px;
+                background-color:aliceblue;
+                text-decoration: none;
+                text-align: center;
             }
 		</style>
 </head>
 <body>
-    <tr height="60">
-           <p align="center"> <td align="center" colspan="6" ><font face="隶书" size="+5" color="#000000">教师组卷系统</font></td></tr> </p>
+    <tr align="center">
+          <p align="center"><td align="center" colspan="6" ><font face="隶书" size="+3" color="#000000">教师组卷系统</font></td></p> 
 		<div id="head">
 			<p align="right"><font color="black">
             <?php if(isset($_SESSION["username"])){ 
@@ -94,16 +116,16 @@
             <a class="login" href="login.php">【登录】</a>
             <?php } ?>
         </font></p>
-		</div>
+		</div></tr>
 <!--导航栏-->
         <div id="mune">
 				<ul>
-					<li><a href="index.php">网站首页</a></li>
-                                        <li><a href="teacher/teachermanage.php">教师管理</a></li>
-					<li><a href="course/courselist.php">课程管理</a></li>
-					<li><a href="chapter/chapterlist.php">章节管理</a></li>
-					<li><a href="topic/topicmanage.php">题目管理</a></li>
-					<li><a href="paper/index.php">组卷系统</a></li>
+					<li><a href="index.php" class="a">网站首页</a></li>
+                    <li><a href="teacher/teachermanage.php" class="a">教师管理</a></li>
+					<li><a href="course/courselist.php" class="a">课程管理</a></li>
+					<li><a href="chapter/chapterlist.php" class="a">章节管理</a></li>
+					<li><a href="topic/topicmanage.php" class="a">题目管理</a></li>
+					<li><a href="paper/index.php" class="a">组卷系统</a></li>
 				</ul>    
 		</div>    
 				
@@ -122,7 +144,6 @@
                 </ul>
             </div>
         </div>
-
     <script type="text/javascript">
         var slid = document.getElementById("banner");
         //var id = document.getElementById("bt");
@@ -177,8 +198,9 @@
 <!--图片轮播结束-->	
 
 <!--底部设计-->
-            <div id="foot">
-		<p align="center"><font color="white">版权所有&copy;郑州师范学院</font></p>
+            <div >
+               <p> <hr></p>
+		<p align="center"><font>版权所有&copy;郑州师范学院</font></p>
 	    </div>
 	</body>
 </html>

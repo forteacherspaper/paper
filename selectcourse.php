@@ -75,26 +75,45 @@ $row_teacher=mysqli_fetch_assoc($teacher);
             }
             .a{
                 font-family: 黑体;
-                font-size: 25px;
+                font-size: 16px;
                 background-color:aliceblue;
                 text-decoration: none;
+                background-color: #ced1f2;
             }
             body{
                 background: aliceblue;
                 text-decoration: none;
             }
-            a:link{
+          
+             a:link{
                  text-decoration: none;
+                 color:#000000;
+            
             }
+            a:visited{
+                color:#000000;
+             }
+             a:hover{
+                color:#000000;
+             }
+             a:active{
+                color:#000000;
+             }
+             #d{
+                position: fixed;
+                bottom: 0px;
+              text-align: center;
+             }
 	</style>
 </head>
 <body bgcolor="white">
-    <table width="100%" border="0" align="center">
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
-            <td height="98" colspan="6" align="center">
+            <td height="38" colspan="6" align="center">
                <p align="center"> <font face="隶书" size="+3" color="#000000" >组卷系统-请选择课程</font>
             </p></td>
         </tr>
+       <tr><td><br></td></tr>
          <div id="head">
             <p align="right"><font>
                 <?php
@@ -103,16 +122,17 @@ $row_teacher=mysqli_fetch_assoc($teacher);
                 <a class="login" href="logout.php">【退出】</a></font></p>
             </div>
         <tr align="center">
-            <td width="15%" height="20" align="center" valign="middle" class="a">
+            <td width="15%" height="40px" align="center" valign="middle" class="a">
                 <a href="index.php">首页</a>
             </td>
-            <td width="15%" height="20%" class="a"><a href="course/courselist.php">课程管理</a></td>
-            <td width="15%" height="20%" class="a"><a href="chapter/chapterlist.php">课程章节管理</a></td>
-             <td width="15%" height="20%" class="a"><a href="topic/topicmanage.php">题目管理</a></td>
-            <td width="15%" height="20%" align="left" valign="middle" class="a">
+            <td width="15%" height="40px"  class="a">
                 <a href="teacher/teachermanage.php">教师管理</a>
             </td>
-            <td width="15%" height="20%" align="left" valign="middle" class="a">
+            <td width="15%" height="40px" class="a"><a href="course/courselist.php">课程管理</a></td>
+            <td width="15%" height="40px" class="a"><a href="chapter/chapterlist.php">章节管理</a></td>
+             <td width="15%" height="40px" class="a"><a href="topic/topicmanage.php">题目管理</a></td>
+            
+            <td width="15%" height="40px"  class="a">
                 <a href="paper/index.php">组卷系统</a>
             </td>
         </tr>
@@ -120,20 +140,19 @@ $row_teacher=mysqli_fetch_assoc($teacher);
 	<table width="100%" border="0" align="center">
         <tr><td><br><br></td></tr>
 <!--导航栏-->
-        <tr> 
+        <!-- <tr> 
                       <td align="center" colspan="6">欢迎 <?php echo $row_teacher['name'] ?> 老师登录组卷系统！</td>
-	     </tr>   
+	     </tr> -->   
             <tr>
                 
                 <td></td>
                 <td></td>
-                <td width="27%" height="20" align="center" valign="middle">
-                <a href="course/addcourse.php">创建课程</a>
-                </td>
+                
+            </tr>
             <tr>
 		<td height="169" colspan="5" align="center">
                     <table width="100%" border="0">
-			<tr valign="middle">
+			<tr valign="middle" >
                             <td align="center"><b>序号</b></td>
                             <td align="center"><b>课程名称</b></td>
                             <td align="center"><b>管理员</b></td>
@@ -150,9 +169,9 @@ $row_teacher=mysqli_fetch_assoc($teacher);
 	</tr>
 	<tr>
             <td colspan="6">
-                <table width="100%" border="0"><hr>
-                    <div id="foot">
-                        <p align="center"><font color="white">版权所有&copy;郑州师范学院</font></p>
+                <table width="100%" border="0"><div id="d"><hr>
+                    
+                        <p align="center"><font>版权所有&copy;郑州师范学院</font></p>
                     </div>
 		</table>	
 			</td>

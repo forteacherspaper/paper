@@ -3,12 +3,7 @@
 <head>
   <title>用户登录</title>
   <style type="text/css">
-    #foot{
-        height:30px;
-        background-color:powderblue;
-        margin: 0px 0px;
-        font-size:30;
-      }
+   
       #b{
         height: 100px;
       }
@@ -19,6 +14,10 @@
        
         background: #f0f8ff;
       }
+      .m{
+        background-color: #ced1f2;
+      }
+      
   </style>
 </head>
 <body>
@@ -28,7 +27,7 @@
   <table align="center" >
     <tr align="center"><td width="80%" align="center">
     <form action="loginsuccess.php" method="post">
-     <fieldset>
+     <fieldset class="m" >
       <legend>用户登录</legend>
       <ul type="none">
       <li>
@@ -51,7 +50,8 @@
 </div>
 <div id="5"></div>
 <br><br>
-   <div id="foot">
+   <div >
+    <hr>
     <p align="center"><font >版权所有&copy;郑州师范学院</font></p>
       </div>
      </form>
