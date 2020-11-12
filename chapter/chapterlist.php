@@ -30,25 +30,38 @@ $row_Chapter=mysqli_fetch_assoc($Chapter);//取出一行数据的关联数组（
                 font-size: 16px;
                 background-color:aliceblue;
                 text-decoration: none;
+                background-color: #ced1f2;
             }
             body{
                 background: aliceblue;
                 text-decoration: none;
             }
-            a:link{
+             a:link{
                  text-decoration: none;
-            }
+                 color:#000000;
             
+            }
+            a:visited{
+                color:#000000;
+             }
+             a:hover{
+                color:#000000;
+             }
+             a:active{
+                color:#000000;
+             }
     </style>
 </head>
 <body bgcolor="#f4f4f4">
-    <table border="0" width="100%">
-     
-    <table width="100%" border="0" align="center">
+    <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
         
         <tr>
-            <p align="center"><td colspan="5" align="center">
-                <font face="隶书" size="+3" color="#000000">组卷系统-章管理</font></td><td align="right" width="50px" bgcolor=""><font>
+            <td></td>
+            <p align="center"><td colspan="4" align="center">
+                <font face="隶书" size="+3" color="#000000">组卷系统-章节管理</font>
+            </td></p>
+            <td><div>
+            <p align="right"><font>
                 <?php
                 echo $_SESSION['username'];
                 ?>
@@ -56,33 +69,36 @@ $row_Chapter=mysqli_fetch_assoc($Chapter);//取出一行数据的关联数组（
                 <?php
                 echo "当前课程：".$coursename;
                 ?>
-                </font>
-            </td></p>
+                </p>
+            </div></td>
         </tr>
-    <tr>
-            <td width="15%" height="20" align="center" class="a">
+        
+        <tr align="center">
+           <td width="15%" height="40px" align="center" valign="middle" class="a">
                 <a href="../index.php">首页</a>
             </td>
-            <td width="15%" height="20%" class="a" align="center"><a href="../course/courselist.php">课程管理</a></td>
-            <td width="15%" height="20%" class="a" align="center"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
-            <td width="15%" height="20%" align="center" valign="middle" class="a">
-                <a href="../teacher/teachermanage.php">教师管理</a>
-            <td width="15%" height="20%" align="center" valign="middle" class="a">
+            <td width="15%" height="40px" class="a"><a href="../teacher/teachermanage.php">教师管理</a></td>
+            <td width="15%" height="40px" class="a"><a href="../course/courselist.php">课程管理</a></td>
+            <td width="15%" height="40px" class="a"><a href="chapterlist.php">章节管理</a></td>
+            <td width="15%" height="40px" class="a">
                 <a href="../topic/topicmanage.php">题目管理</a>
             </td>
-            <td width="15%" height="20%" align="center" valign="middle" class="a">
+            <td width="15%" height="40px"  class="a">
                 <a href="../paper/index.php">组卷系统</a>
             </td>
-           
-            <tr>
-                <td  valign="middle"  align="center"><b>章号</b></td>
-                <td  valign="middle" align="center" ><b>章名称</b></td>
-                <td  valign="middle"  align="center"><b>操作</b></td>
-                <td  valign="middle"  align="center"><a href="addchapter.php"><font color="#1B2AE0" size="4"  >添加章</font></a></td>
+        </tr>
+        <tr><td><br><br></td></tr>
+            <tr align="center">
+                <td></td>
+                <td  align="center"><b>章号</b></td>
+                <td  align="center" ><b>章名称</b></td>
+                <td  align="center"><b>操作</b></td>
+                <td  align="center"><a href="addchapter.php"><font size="4"  >添加章</font></a></td>
+                  <td></td>
                
             </tr>
             <?php do { ?>
-            <tr valign="middle" align="center">
+            <tr valign="middle" align="center"><td></td>
                 <td><?php echo $row_Chapter['number']; ?></td>
                 <td><a href="allsection.php"><?php echo $row_Chapter['chaptername'] ; ?></a></td>
 		        <input type="hidden" name="id" id="id" value="<?php echo $row_Chapter['id'] ?>">
@@ -94,7 +110,7 @@ $row_Chapter=mysqli_fetch_assoc($Chapter);//取出一行数据的关联数组（
                     </a>
                     <a href="addsection.php?chapterid=<?php echo $row_Chapter['id'] ?>" title="addsection.php?chapterid=<?php echo $row_Chapter['id'] ?>">添加节</a>&nbsp;&nbsp;&nbsp;
                     <a href="allsection.php?chapterid=<?php echo $row_Chapter['id'] ?>" title="allsection.php?chapterid=<?php echo $row_Chapter['id'] ?>">显示节序列</a></td>
-                    <td align="center" width="15%"></td> 
+                    <td align="center" width="15%"></td> <td></td>
             </tr>
             <?php }while ($row_Chapter=mysqli_fetch_assoc($Chapter)) ;
             ?>

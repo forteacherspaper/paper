@@ -81,59 +81,84 @@ $row_course=mysqli_fetch_assoc($course);//取出一行数据的关联数组（�
 		margin: 0px 0px;
 		font-size:30;
             }
+        #d{
+                position: fixed;
+                bottom: 0px;
+              text-align: center;
+             }
+        body{
+                background: aliceblue;
+                text-decoration: none;
+            }
        .a{
                 font-family: 黑体;
                 font-size: 16px;
                 background-color:aliceblue;
                 text-decoration: none;
+                background-color: #ced1f2;
             }
             body{
                 background: aliceblue;
                 text-decoration: none;
             }
-            a:link{
+             a:link{
                  text-decoration: none;
-            }
+                 color:#000000;
             
+            }
+            a:visited{
+                color:#000000;
+             }
+             a:hover{
+                color:#000000;
+             }
+             a:active{
+                color:#000000;
+             }
     </style>
 </head>
 <body bgcolor="#f4f4f4">
-    <table border="0" width="100%">
-     
-    <table width="100%" border="0" align="center">
+    <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
         
         <tr>
-            <p align="center"><td colspan="5" align="center">
-                <font face="隶书" size="+3" color="#000000">组卷系统-课程管理</font></td><td align="right" width="50px" bgcolor=""><font>
-                <?php
+            <td></td>
+            <p align="center"><td colspan="3" align="center">
+                <font face="隶书" size="+3" color="#000000">组卷系统-课程管理</font>
+            </td></p>
+            <td><div>
+            <p align="right"><font>
+                 <?php
                 echo $_SESSION['username'];
                 ?>
                 <a class="login" href="../logout.php">【退出】</a><br/>
                 <?php
                 echo "当前课程：".$coursename;
                 ?>
-                </font>
-            </td></p>
-        </tr> 
-	<table width="100%" border="0" align="center">
+                </p>
+            </div></td>
+        </tr>
         
-          
-        <div id="mune">
-            <ul>
-                <li><a href="../index.php">网站首页</a></li>
-                <li><a href="../teacher/teachermanage.php">教师管理</a></li>
-		<li><a href="../course/courselist.php">课程管理</a></li>
-		<li><a href="../chapter/chapterlist.php">章节管理</a></li>
-		<li><a href="../topic/topicmanage.php">题目管理</a></li>
-		<li><a href="../paper/index.php">组卷系统</a></li>
-            </ul>    
-	</div>    
+       <tr>
+            <td width="15%" height="40px" align="center" valign="middle" class="a">
+                <a href="../index.php">首页</a>
+            </td>
+            <td width="15%" height="40px" class="a" align="center"><a href="../teacher/teachermanage.php">教师管理</a></td>
+            <td width="15%" height="40px" class="a" align="center"><a href="courselist.php">课程管理</a></td>
+            <td width="15%" height="40px" class="a" align="center"><a href="../chapter/chapterlist.php">章节管理</a></td>
+            <td width="15%" height="40px" class="a">
+                <a href="../topic/topicmanage.php">题目管理</a>
+            </td>
+            <td width="15%" height="40px"  class="a">
+                <a href="../paper/index.php">组卷系统</a>
+            </td>
+        </tr>
+        <tr><td><br><br></td></tr>
             <tr>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td width="27%" height="20" align="center" valign="middle">
-                <a href="addcourse.php">插入课程</a>
+                <td><br></td>
+                <td width="27%" height="20" align="right" valign="middle">
+                <a href="addcourse.php"><font face="幼圆" size="+1"><b>创建课程</b></font></a>
                 </td>
             <tr>
 		<td height="169" colspan="5" align="center">
@@ -163,8 +188,8 @@ $row_course=mysqli_fetch_assoc($course);//取出一行数据的关联数组（�
 	<tr>
             <td colspan="6">
                 <table width="100%" border="0"><hr>
-                    <div id="foot">
-                        <p align="center"><font color="white">版权所有&copy;郑州师范学院</font></p>
+                    <div>
+                        <p align="center"><font>版权所有&copy;郑州师范学院</font></p>
                     </div>
 		</table>	
 			</td>

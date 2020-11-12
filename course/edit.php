@@ -28,45 +28,60 @@ else{
                 font-size: 16px;
                 background-color:aliceblue;
                 text-decoration: none;
+                background-color: #ced1f2;
             }
             body{
                 background: aliceblue;
                 text-decoration: none;
             }
-            a:link{
+             a:link{
                  text-decoration: none;
-            }
+                 color:#000000;
             
+            }
+            a:visited{
+                color:#000000;
+             }
+             a:hover{
+                color:#000000;
+             }
+             a:active{
+                color:#000000;
+             }
     </style>
 </head>
 <body bgcolor="#f4f4f4">
-    <table border="0" width="100%">
-     
-    <table width="100%" border="0" align="center">
+    <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
         
         <tr>
-            <p align="center"><td colspan="5" align="center">
-                <font face="隶书" size="+3" color="#000000">组卷系统-课程管理</font></td><td align="right" width="50px" bgcolor=""><font>
-                <?php
+            <td></td>
+            <p align="center"><td colspan="3" align="center">
+                <font face="隶书" size="+3" color="#000000">组卷系统-课程管理</font>
+            </td></p>
+            <td><div>
+            <p align="right"><font>
+                 <?php
                 echo $_SESSION['username'];
                 ?>
                 <a class="login" href="../logout.php">【退出】</a><br/>
                 <?php
                 echo "当前课程：".$coursename;
                 ?>
-                </font>
-            </td></p>
-        </tr> 
-        <tr>
-            <td width="15%" height="20" align="left" valign="middle" class="a">
+                </p>
+            </div></td>
+        </tr>
+        
+       <tr>
+            <td width="15%" height="40px" align="center" valign="middle" class="a">
                 <a href="../index.php">首页</a>
             </td>
-            <td width="15%" height="20%" class="a"><a href="../course/courselist.php">课程管理</a></td>
-            <td width="15%" height="20%" class="a"><a href="../chapter/chapterlist.php">课程章节管理</a></td>
-            <td width="15%" height="20%" align="left" valign="middle" class="a">
+            <td width="15%" height="40px" class="a"><a href="../teacher/teachermanage.php">教师管理</a></td>
+            <td width="15%" height="40px" class="a"><a href="courselist.php">课程管理</a></td>
+            <td width="15%" height="40px" class="a"><a href="../chapter/chapterlist.php">章节管理</a></td>
+            <td width="15%" height="40px" class="a">
                 <a href="../topic/topicmanage.php">题目管理</a>
             </td>
-            <td width="15%" height="20%" align="left" valign="middle" class="a">
+            <td width="15%" height="40px"  class="a">
                 <a href="../paper/index.php">组卷系统</a>
             </td>
         </tr>
