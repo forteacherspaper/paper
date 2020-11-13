@@ -1,5 +1,4 @@
    <?php require'../connections/isrealuser.php';?>
-   <?php require'../connections/course.php';?>
    <?php
     date_default_timezone_set('prc');
     $data = date('Y-m-d H:i:s',time());
