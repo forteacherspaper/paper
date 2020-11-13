@@ -80,8 +80,15 @@
                 <a href="paperlist.php">组卷系统</a>
             </td>
         </tr>
+        <tr><td><br></td></tr>
         <tr><td colspan="6">
+         <tr align="right">
+                <td width="27%" height="20" align="right" valign="middle" colspan="5">
+                <a href="createpaper.php"><font face="幼圆" size="+1"><b>创建试卷</b></font></a>
+                </td>
+            <tr>
 	<table width="100%" border="0" align="center">
+       
 		<tr>
 		    <td height="169"  align="center">
 			    <table width="100%" border="0">

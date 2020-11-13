@@ -88,7 +88,7 @@ $row_Topic=mysqli_fetch_assoc($Topic) ;
             <td width="15%" height="40px" class="a"align="center"><a href="../course/courselist.php">课程管理</a></td>
             <td width="15%" height="40px" class="a" align="center"><a href="../chapter/chapterlist.php">章节管理</a></td>
             <td width="15%" height="40px" class="a" align="center"><a href="topicmanage.php">题目管理</a></td>
-            <td width="15%" height="40px"  class="a" align="center"><a href="../paper/index.php">组卷系统</a></td>
+            <td width="15%" height="40px"  class="a" align="center"> <a href="../paper/paperlist.php">组卷系统</a></td>
         </tr>
         <tr><table><hr></table></tr>
         <tr>

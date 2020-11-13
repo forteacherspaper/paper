@@ -51,9 +51,6 @@
                 echo $_SESSION['username'];
                 ?>
                 <a class="login" href="../logout.php">【退出】</a><br/>
-                <?php
-                echo "当前课程：".$coursename;
-                ?>
                 </p>
             </div></td>
         </tr>
@@ -69,14 +66,14 @@
                 <a href="../topic/topicmanage.php">题目管理</a>
             </td>
             <td width="15%" height="40px"  class="a">
-                <a href="../paper/index.php">组卷系统</a>
+                 <a href="../paper/paperlist.php">组卷系统</a>
             </td>
         </tr>
         <tr>
             <td height="169" colspan="6" align="center">
                 <form id="form1" name="form1" method="post" action="insertSuccess.php">
                     <table width="100%" border="0" align="center">
-                        <tr align="right"><td width="40%" colspan="5">插入课程</td></tr>
+                        <tr align="right"><td width="40%" colspan="5">创建课程</td></tr>
                         <br>
                         <tr>
                             <td width="40%" align="right" valign="middle" colspan="5">课程名称:</td>

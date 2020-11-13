@@ -74,7 +74,7 @@ $row_section=mysqli_fetch_assoc($section);//取出一行数据的关联数组（
                 <a href="../topic/topicmanage.php">题目管理</a>
             </td>
             <td width="15%" height="40px"  class="a">
-                <a href="../paper/index.php">组卷系统</a>
+                 <a href="../paper/paperlist.php">组卷系统</a>
             </td>
         </tr><tr>
                 <td  valign="middle"  align="center"><b>小节序列</b></td>

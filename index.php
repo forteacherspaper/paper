@@ -1,3 +1,5 @@
+<?php require_once('connections/isrealuser.php');?>
+<?php require_once('connections/coursename.php');?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -108,13 +110,17 @@
           <p align="center"><td align="center" colspan="6" ><font face="隶书" size="+3" color="#000000">教师组卷系统</font></td></p> 
 		<div id="head">
 			<p align="right"><font color="black">
+                <p align="right"><font color="black">
             <?php if(isset($_SESSION["username"])){ 
             echo $_SESSION['username'];
-                ?> 
-            <a class="reg"  target="_blank" href="logout.php">【退出】</a>
+                ?>
+            <a class="reg"  href="logout.php">【退出】</a>
         <?php }else{ ?>
             <a class="login" href="login.php">【登录】</a>
             <?php } ?>
+            <br/><?php
+                echo "当前课程：".$coursename;
+                ?>
         </font></p>
 		</div></tr>
 <!--导航栏-->
@@ -125,7 +131,7 @@
 					<li><a href="course/courselist.php" class="a">课程管理</a></li>
 					<li><a href="chapter/chapterlist.php" class="a">章节管理</a></li>
 					<li><a href="topic/topicmanage.php" class="a">题目管理</a></li>
-					<li><a href="paper/index.php" class="a">组卷系统</a></li>
+					<li><a href="paper/paperlist.php" class="a">组卷系统</a></li>
 				</ul>    
 		</div>    
 				
