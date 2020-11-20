@@ -4,7 +4,7 @@
 <?php
 
     MySQLi_query($conn, "set names 'utf8'");
-    $query_paper="select * from paper";
+    $query_paper="select * from paper where courseid=$courseid";
     $paper=MySQLi_query($conn,$query_paper) or die(mysqli_error($conn));
     $row_paper=mysqli_fetch_assoc($paper); 
     $i=1;
