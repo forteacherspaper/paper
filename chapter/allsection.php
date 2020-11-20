@@ -1,5 +1,6 @@
 <!--  allsection.php  显示所有小节 -->
 <?php require_once '../connections/conn.php';?>
+<?php require'../connections/isrealuser.php';?>
 <?php require'../connections/course.php';//判断是否用户登陆？ 
 ?>
 <?php
