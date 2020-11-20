@@ -14,7 +14,7 @@
        header("location:../selectcourse.php");//判断是否选择课程
     }
 mysqli_query($conn,'set names utf8');
-$query_Chapter="select * from chapter where courseid=$courseid";
+$query_Chapter="select * from chapter where courseid=$courseid order by number";
 $Chapter=mysqli_query($conn,$query_Chapter) or die(mysqli_error($conn));
 $row_Chapter=mysqli_fetch_assoc($Chapter);//取出一行数据的关联数组（索引数组）
 ?>
