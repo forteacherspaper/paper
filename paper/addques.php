@@ -103,41 +103,40 @@ function query(){
         <tr><td><br><br><br></td></tr>
         <tr align="center"><td colspan="6" align="center">
 		<h2>试卷名称：<?php echo $row_paper['papername'] ?> </h2>
-		<form action="addquessuccess.php" name="class" method="post" id="class">
-			请选择：
-			<select name="chapterClassName" id="chapterClassName" Onchange="query()">
-			<option>--选择章--</option>
-			<?php
-				$sql1="select id,chaptername from chapter where courseid=$courseid";
-				mysqli_query($conn,"set names 'utf8'");
-				$res1=mysqli_query($conn,$sql1);
-				while($result1=mysqli_fetch_assoc($res1)){
-				   echo "<option value='".$result1["id"]."'>".$result1["chaptername"]."</option>";
-				}
-			?>
-			</select>
-				&nbsp;
-			<select name="typeClassName" id="typeClassName"  Onchange="query()">
-			<?php
-				$sql2="select id,questiontypename from questiontype";
-				mysqli_query($conn,"set names 'utf8'");
-				$res2=mysqli_query($conn,$sql2);
-				while($result2=mysqli_fetch_assoc($res2)){
-				   echo "<option value='".$result2["questiontypename"]."'>".$result2["questiontypename"]."</option>";
-				}
-			?>
-			</select>
-			</td></tr>
-			<br>	
-			<tr>
-					<td align="center" colspan="6">每题分值：<input type="number" name="score" id="score">
-					<input type="submit" value="确定添加" name="submit" /></td>
-				</tr>
-				<tr><td colspan="6"><br><br><br></td></tr>
-				<tr><td colspan="6"><hr></td></tr>
-			 <tr>
-                        <td align="center" colspan="6" valign="middle">Copyright@2020 组卷系统-题目管理</td>
-                    </tr></table>
+<form action="addquessuccess.php" name="class" method="post" id="class">
+    请选择：
+    <select name="chapterClassName" id="chapterClassName" Onchange="query()">
+    <option>--选择章--</option>
+    <?php
+        $sql1="select id,chaptername from chapter where courseid=$courseid";
+        mysqli_query($conn,"set names 'utf8'");
+        $res1=mysqli_query($conn,$sql1);
+        while($result1=mysqli_fetch_assoc($res1)){
+           echo "<option value='".$result1["id"]."'>".$result1["chaptername"]."</option>";
+        }
+    ?>
+    </select>
+        &nbsp;
+    <select name="typeClassName" id="typeClassName"  Onchange="query()">
+    <?php
+        $sql2="select id,questiontypename from questiontype";
+        mysqli_query($conn,"set names 'utf8'");
+        $res2=mysqli_query($conn,$sql2);
+        while($result2=mysqli_fetch_assoc($res2)){
+           echo "<option value='".$result2["questiontypename"]."'>".$result2["questiontypename"]."</option>";
+        }
+    ?>
+    </select>
+    <br>    
+    <div id="timu01">
+        
+    </div>
+    <table width="100%">
+        <tr valign="middle" align="center">
+            <td align="right">每题分值：<input type="number" name="score" id="score"></td>
+            <td align="left"><input type="submit" value="确定添加" name="submit" /></td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>

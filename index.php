@@ -121,6 +121,7 @@
             <br/><?php
                 echo "当前课程：".$coursename;
                 ?>
+            <br/><a href="/paper/selectcourse.php">重新选择课程</a>
         </font></p>
 		</div></tr>
 <!--导航栏-->

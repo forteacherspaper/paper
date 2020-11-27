@@ -61,7 +61,8 @@
                 <a class="login" href="../logout.php">【退出】</a><br/>
                 <?php
                 echo "当前课程：".$coursename;
-                ?>
+                ?><br />
+                <a href="../selectcourse.php">重新选择课程</a>
                 </p>
             </div></td>
         </tr>
@@ -86,7 +87,7 @@
                 <td width="27%" height="20" align="right" valign="middle" colspan="5">
                 <a href="createpaper.php"><font face="幼圆" size="+1"><b>创建试卷</b></font></a>
                 </td>
-            <tr>
+            </tr>
 	<table width="100%" border="0" align="center">
        
 		<tr>
@@ -97,6 +98,7 @@
 			            <td align="center" class="b"><b>试卷名称</b></td>
 						<td align="center" class="b"><b>查看试卷文本及答案</b></td>
 						<td align="center"><b>试卷覆盖率分析</b></td>
+                        <td align="center"><b>试卷对比</b></td>
 			            <td align="center" class="b"><b>添加&nbsp;&nbsp;编辑&nbsp;&nbsp;删除</b></td>                
 					</tr>
 					<?php do { ?>
@@ -105,6 +107,7 @@
 							<td><a href="paperqueslist.php?paperid=<?php echo $row_paper['id']; ?>"><?php echo $row_paper['papername'] ; ?></a></td>
 							<td><a href="writepaper.php?paperid=<?php echo $row_paper['id']; ?>">查看试卷文本及答案</a></td>
 							<td><a href="analysispaper.php?paperid=<?php echo $row_paper['id']; ?>">试卷覆盖率分析</a></td>
+                            <td><a href="papercontrast.php?paperid=<?php echo $row_paper['id']; ?>">试卷对比</a></td>
 			                <td>
 			                	<a href="addques.php?paperid=<?php echo $row_paper['id'] ; ?>">添加题目</a>
 			                    <a href="editpapername.php?paperid=<?php echo $row_paper['id'] ; ?>">编辑</a>
@@ -120,11 +123,8 @@
 				<table width="100%" border="0">
 					<hr>
 					<tr>
-						<td align="center" valign="middle">Copyright@2006 lanmo</td>
+						<td align="center" valign="middle">版权所有@郑州师范学院</td>
 					</tr>
-					<tr>
-						<td align="center" valign="middle">XXX Email:lanmo@myweb.com </td>
-            		</tr>
 				</table>
 			</td>
 		</tr>
